@@ -1,11 +1,19 @@
 <?php include('../conn.php'); ?>
-<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title><?php echo 'Story Title'; ?> | MyStoryz</title>
 </head>
 <body>
 	<div class="container">
+
+		<!-- Display navigation -->
+		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
+		<!-- // Display navigation -->
+
+		<!-- Display banner -->
 		<?php include(ROOT_PATH.'/includes/banner.php'); ?>
+		<!-- // Display banner -->
+
+		<!-- Story content -->
 		<div class="story-content">
 			<div class="story-image">
 				<img src="story-image.jpg" />
@@ -21,9 +29,17 @@
 				</p>
 			</div>
 		</div>
+		<!-- // Story content -->
+
+		<!-- Comment section -->
 		<div class="comment">
+
+			<!-- Display comment box -->
 			<?php include(ROOT_PATH.'/includes/comment_box.php'); ?>
-			<ul>
+			<!-- // Display comment box -->
+
+			<!-- Display available comments -->
+			<ul class="available-comments">
 				<li>
 					<div class="comment-card">
 						<div class="user-info">
@@ -73,8 +89,14 @@
 					</div>
 				</li>
 			</ul>
-		</div>
-	</div>
-	<?php include(ROOT_PATH.'/includes/footer.php'); ?>
-<?php include(ROOT_PATH.'/includes/html_bottom.php'); ?>
+			<!-- // Display available comments -->
 
+		</div>
+		<!-- // Comment section -->
+
+		<!-- Display footer -->
+		<?php include(ROOT_PATH.'/includes/footer.php'); ?>
+		<!-- // Display footer -->
+	
+	</div>
+<?php include(ROOT_PATH.'/includes/html_bottom.php'); ?>

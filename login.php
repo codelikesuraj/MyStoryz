@@ -3,8 +3,13 @@
 	<title>Login | MyStoryz</title>
 </head>
 <body>
-	<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
 	<div class="container">
+
+		<!-- Display navigation -->
+		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
+		<!-- // Display navigation -->
+
+		<!-- Login form -->
 		<form method="post">
 			<h2>Login</h2>
 			<label>
@@ -15,8 +20,13 @@
 				password" required />
 			</label><br/>
 			<input type="submit" name="login" value="Sign In" />
+			<p>Don't have an account yet ? <a href="signup.php">Create one</a></p>
 		</form>
-		<p>Don't have an account yet ? <a href="signup.php">Create one</a></p>
+		<!-- // Login form -->
+
+		<!-- Display footer -->
+		<?php include(ROOT_PATH.'/includes/footer.php'); ?>
+		<!-- // Display footer -->
+
 	</div>
-	<?php include(ROOT_PATH.'/includes/footer.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_bottom.php'); ?>

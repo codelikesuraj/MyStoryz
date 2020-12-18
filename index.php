@@ -3,9 +3,17 @@
 	<title>Home | MyStoryz</title>
 </head>
 <body>
-	<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
-	<?php include(ROOT_PATH.'/includes/banner.php'); ?>
 	<div class="container">
+
+		<!-- Display navigation -->
+		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
+		<!-- // Display navigation -->
+
+		<!-- Display banner -->
+		<?php include(ROOT_PATH.'/includes/banner.php'); ?>
+		<!-- // Display banner -->
+
+		<!-- Display list of recent storyz -->
 		<div class="story-list">
 			<h2>Recent Storyz ...</h2>
 			<ul>
@@ -31,6 +39,11 @@
 				</li>
 			</ul>
 		</div>
+		<!-- // Display list of recent storyz -->
+		
+		<!-- Display footer -->
+		<?php include(ROOT_PATH.'/includes/footer.php'); ?>
+		<!-- // Display footer -->
+	
 	</div>
-	<?php include(ROOT_PATH.'/includes/footer.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_bottom.php'); ?>

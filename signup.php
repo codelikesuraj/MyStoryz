@@ -3,8 +3,14 @@
 	<title>Sign Up | MyStoryz</title>
 </head>
 <body>
-	<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
 	<div class="container">
+		
+		<!-- display navigation -->
+		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
+		<!-- //display navigation -->
+
+
+		<!-- Sign-up/Registration Form for new user -->
 		<form method="post">
 			<h2>Sign Up</h2>
 			<label>
@@ -22,8 +28,13 @@
 				retype password" required />
 			</label><br/>
 			<input type="submit" name="login" value="Sign In" />
+		    <p>Already have an account ? <a href="login.php">Sign In</a></p>
 		</form>
-		<p>Already have an account ? <a href="login.php">Sign In</a></p>
+		<!-- // Sign-up/Registration Form for new user -->
+
+		<!-- display footer -->
+		<?php include(ROOT_PATH.'/includes/footer.php'); ?>
+		<!-- // display footer -->
+
 	</div>
-	<?php include(ROOT_PATH.'/includes/footer.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_bottom.php'); ?>
