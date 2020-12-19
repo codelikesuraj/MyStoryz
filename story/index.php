@@ -1,10 +1,26 @@
 <?php include('../conn.php'); ?>
+<?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+
+<!-- Fetch story from title in GET parameter-->
+<?php
+if(isset($_GET) && !empty($_GET['title'])):
+	$story = getSingleStory($_GET['title']);
+	if($story === 'error'):
+		header('location: '.BASE_URL);
+		exit(0);
+	endif;
+else:
+	header('location: '.BASE_URL);
+	exit(0);
+endif;
+?>
+
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title><?php echo 'Story Title'; ?> | MyStoryz</title>
+	<title>MyStoryz | <?php echo $story['title']; ?></title>
 </head>
 <body>
 	<div class="container">
-
+		
 		<!-- Display navigation -->
 		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
 		<!-- // Display navigation -->
@@ -16,17 +32,14 @@
 		<!-- Story content -->
 		<div class="story-content">
 			<div class="story-image">
-				<img src="story-image.jpg" />
+				<img src="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>" />
 			</div>
 			<div class="story-info">
-				<h2>Story Title</h2>
-				<p>Published on {date}</p>
+				<h2><?php echo $story['title']; ?></h2>
+				<p>Published on <?php echo date('M Y', strtotime($story['created'])); ?></p>
 			</div>
 			<div class="story-text">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<p><?php echo $story['content']; ?></p>
 			</div>
 		</div>
 		<!-- // Story content -->

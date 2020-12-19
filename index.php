@@ -1,4 +1,6 @@
 <?php include('conn.php'); ?>
+<?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+<?php $story = getAllStory(); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>Home | MyStoryz</title>
 </head>
@@ -17,26 +19,24 @@
 		<div class="story-list">
 			<h2>Recent Storyz ...</h2>
 			<ul>
+				<?php foreach($story as $key):?>
 				<li>
 					<div class="story-card">
-						<div class="story-header">
-							<img class="author-image" src="profile.jpg" />
-							<div class="author-info">
-								<p class="author-name">Author name</p>
-								<p class="publish-date">Published on {date}</p>
-							</div>
+						<div class="author-info">
+							<img class="author-image" src="<?php echo BASE_URL.'/static/images/'.$key['story_author']['image']; ?>" /><?php echo $key['story_author']['username']; ?><br/>Published on <?php echo date('M Y', strtotime($key['created'])); ?>
 						</div>
-						<a href="<?php echo BASE_URL.'/story?title=story-title'; ?>">
+						<a href="<?php echo BASE_URL.'/story?title='.$key['slug']; ?>">
 							<div class="story-image" >
-								<img src="story-image.jpg">
+								<img style="width: 50%; height: auto;" src="<?php echo BASE_URL.'/static/images/'.$key['image']; ?>">
 							</div>
 							<div class="story-info">
-								<p class="story-title">Story title</p>
+								<h3 class="story-title"><?php echo $key['title']; ?></h3>
 								<p class="story-dummy">Read more...</p>
 							</div>
 						</a>
 					</div>
 				</li>
+			<?php endforeach; ?>
 			</ul>
 		</div>
 		<!-- // Display list of recent storyz -->
