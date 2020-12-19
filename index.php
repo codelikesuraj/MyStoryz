@@ -23,13 +23,19 @@
 				<li>
 					<div class="story-card">
 						<div class="author-info">
+
+							<!-- display author profile (image & username) and story publish date-->
 							<img class="author-image" src="<?php echo BASE_URL.'/static/images/'.$key['story_author']['image']; ?>" /><?php echo $key['story_author']['username']; ?><br/>Published on <?php echo date('M Y', strtotime($key['created'])); ?>
 						</div>
 						<a href="<?php echo BASE_URL.'/story?title='.$key['slug']; ?>">
+
+							<!-- display story image -->
 							<div class="story-image" >
 								<img style="width: 50%; height: auto;" src="<?php echo BASE_URL.'/static/images/'.$key['image']; ?>">
 							</div>
 							<div class="story-info">
+
+								<!-- display story title -->
 								<h3 class="story-title"><?php echo $key['title']; ?></h3>
 								<p class="story-dummy">Read more...</p>
 							</div>

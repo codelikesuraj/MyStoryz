@@ -14,6 +14,7 @@ else:
 	exit(0);
 endif;
 ?>
+<!-- // Fetch story from title in GET parameter -->
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>MyStoryz | <?php echo $story['title']; ?></title>
@@ -32,13 +33,17 @@ endif;
 		<!-- Story content -->
 		<div class="story-content">
 			<div class="story-image">
+				<!-- display story image -->
 				<img src="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>" />
 			</div>
 			<div class="story-info">
+				<!-- display story title -->
 				<h2><?php echo $story['title']; ?></h2>
+				<!-- display story publish date -->
 				<p>Published on <?php echo date('M Y', strtotime($story['created'])); ?></p>
 			</div>
 			<div class="story-text">
+				<!-- display story content -->
 				<p><?php echo $story['content']; ?></p>
 			</div>
 		</div>

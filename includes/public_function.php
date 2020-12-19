@@ -1,43 +1,62 @@
 <?php
 
+// fetch all published stories
 function getAllStory()
 {
-	global $conn;
+	global $conn;	// include database connection
 	$sql = "SELECT * FROM story WHERE published=1 ORDER BY created DESC";
 	$query = $conn->query($sql);
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	$final_result = array();
 	foreach($result as $key):
-		// fetch the author that created each story
+		// fetch the author information that created each story
 		$key['story_author'] = getAuthor($key['author_id']);
 
-		// add author details as an array to key
+		// add author information details as an array to $final_result
 		array_push($final_result, $key);
 	endforeach;
 	
 	return $final_result;
 }
+
+// fetch author information by the id
 function getAuthor($id)
 {
-	global $conn;
+	global $conn;	// include database connection
 	$sql = "SELECT id, username,image FROM users WHERE id=:id LIMIT 1";
 	$query = $conn->prepare($sql);
 	$query->execute(array(':id'=>$id));
 	$result = $query->fetch(PDO::FETCH_ASSOC);
 	return $result;
 }
+
+// fetch a single published story by the slug
 function getSingleStory(string $slug)
 {
-	global $conn;
+	global $conn;	// include database connection
 	$sql = "SELECT * FROM story WHERE published = 1 AND slug = :slug";
 	$result = $conn->prepare($sql);
 	$result->execute(array(':slug'=>$slug));
 	$story = $result->fetch(PDO::FETCH_ASSOC);
-	if(!empty($story)):
+	
+	if($story):	// if story returns a row
+		// get Author information(as an array) and add to $story
 		$story['author_info'] = getAuthor($story['author_id']);
 		return $story;
-	else:
-		return 'error';
+	else: // if story returns no row
+		return 'error';	// return error text
 	endif;
+}
+
+// get url of current page
+function current_url()
+{
+	if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+		$uri = 'https://';
+	} else {
+		$uri = 'http://';
+	}
+	$uri .= $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	return $uri;
 }

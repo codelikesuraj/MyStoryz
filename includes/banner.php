@@ -12,9 +12,9 @@
 			</p>
 		</div>
 		<div class="login-signin">
-			<a href="<?php echo BASE_URL.'/login.php'; ?>">Login</a><br/>
+			<a href="<?php echo BASE_URL.'/login.php/?ref='.current_url(); ?>">Login</a><br/>
 			or<br/>
-			<a href="<?php echo BASE_URL.'/signup.php'; ?>">Sign Up</a>
+			<a href="<?php echo BASE_URL.'/signup.php/?ref='.current_url(); ?>">Sign Up</a>
 		</div>
 	</div>
 	<!-- // Banner display for Visitor -->
