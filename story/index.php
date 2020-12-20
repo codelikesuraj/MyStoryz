@@ -16,6 +16,10 @@ endif;
 ?>
 <!-- // Fetch story from title in GET parameter -->
 
+<!-- Fetch all comments -->
+<?php $comment = fetchAllComment($_GET['title']); ?>
+<!-- // Fetch all comments -->
+
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>MyStoryz | <?php echo $story['title']; ?></title>
 </head>
@@ -51,6 +55,7 @@ endif;
 
 		<!-- Comment section -->
 		<div class="comment">
+			<h2>Comments(<?php echo count($comment); ?>)</h2>
 
 			<!-- Display comment box -->
 			<?php include(ROOT_PATH.'/includes/comment_box.php'); ?>
@@ -58,54 +63,20 @@ endif;
 
 			<!-- Display available comments -->
 			<ul class="available-comments">
-				<li>
-					<div class="comment-card">
-						<div class="user-info">
-							<span><img src=""></span>
-							<span>Username 1</span>
-							<span>{comment date}</span>
+				<?php foreach($comment as $key): ?>
+					<li>
+						<div class="comment-card">
+							<div class="user-info">
+								<span><img src="<?php echo BASE_URL.'/static/images/'.$key['user_info']['image']; ?>"></span>
+								<span><?php echo $key['user_info']['username']; ?></span>
+								<span><?php echo date('M Y', strtotime($key['created'])); ?></span>
+							</div>
+							<div class="user-comment">
+								<p><?php echo $key['content']; ?></p>
+							</div>
 						</div>
-						<div class="user-comment">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="comment-card">
-						<div class="user-info">
-							<span><img src=""></span>
-							<span>Username 2</span>
-							<span>{comment date}</span>
-						</div>
-						<div class="user-comment">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="comment-card">
-						<div class="user-info">
-							<span><img src=""></span>
-							<span>Username 3</span>
-							<span>{comment date}</span>
-						</div>
-						<div class="user-comment">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="comment-card">
-						<div class="user-info">
-							<span><img src=""></span>
-							<span>Username 4</span>
-							<span>{comment date}</span>
-						</div>
-						<div class="user-comment">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-						</div>
-					</div>
-				</li>
+					</li>
+				<?php endforeach; ?>
 			</ul>
 			<!-- // Display available comments -->
 

@@ -60,3 +60,49 @@ function current_url()
 	$uri .= $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 	return $uri;
 }
+
+// fetch all story comments
+function fetchAllComment($story_slug)
+{
+	global $conn;	// include database connection
+
+	// fetch story id 
+	$story_id = fetchStoryId($story_slug);
+	if($story_id === 'error'):
+		return 'error';
+	endif;
+
+	$sql = "SELECT * FROM comment WHERE story_id = :story_id ORDER BY created DESC";
+	$result = $conn->prepare($sql);
+	$result->execute(array(':story_id'=>$story_id));
+	$comment = $result->fetchAll(PDO::FETCH_ASSOC);
+
+	if($comment):	// if comment returns a row
+		// get information of each commment authors
+		$final_comment = array();
+		foreach($comment as $key):
+			$key['user_info'] = getAuthor($key['user_id']);
+
+			//add user information details as an array to $final_comment
+			array_push($final_comment, $key);
+		endforeach;
+		return $final_comment;
+	else:
+		return 'error';
+	endif;
+}
+
+// fetch id of story with slug as input
+function fetchStoryId($slug)
+{
+	global $conn;	// include database connection
+	$sql = "SELECT id FROM story WHERE slug = :slug LIMIT 1";
+	$result = $conn->prepare($sql);
+	$result->execute(array(':slug'=>$slug));
+	$story_id = $result->fetch(PDO::FETCH_ASSOC);
+	if($story_id):
+		return $story_id['id'];
+	else:
+		return 'error';
+	endif;
+}

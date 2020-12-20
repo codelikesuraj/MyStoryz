@@ -11,7 +11,7 @@ first_name VARCHAR(128) NOT NULL DEFAULT 'n/a',
 last_name VARCHAR(128) NOT NULL DEFAULT 'n/a',
 username VARCHAR(128) NOT NULL,
 email VARCHAR(128) NOT NULL,
-image VARCHAR(128) NOT NULL DEFAULT 'defaultprofile.jpg',
+image VARCHAR(128) NOT NULL DEFAULT 'defaultprofile.png',
 role ENUM('admin', 'author', 'basic') DEFAULT 'basic',
 password VARCHAR(128) NOT NULL,
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -51,6 +51,9 @@ FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE NO ACTION
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 INSERT INTO users (username, email, role, password) VALUES ('fliplikesuraj', 'surajabdulbaki19@gmail.com', 'admin', 'dca4b397327451e277d5d61f5e45a6dc');
+INSERT INTO users (username, email, role, password) VALUES ('fliplikeauthor', 'fliplikeauthor@gmail.com', 'author', 'dca4b397327451e277d5d61f5e45a6dc');
+INSERT INTO users (username, email, role, password) VALUES ('fliplikebasic', 'fliplikebasic@gmail.com', 'basic', 'dca4b397327451e277d5d61f5e45a6dc');
+
 INSERT INTO story (content, slug, title, author_id) VALUES ('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -58,3 +61,8 @@ INSERT INTO story (content, slug, title, author_id) VALUES ('Lorem ipsum dolor s
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'first-post-on-my-storyz', 'First post on MyStoryz', '1');
 INSERT INTO comment (content, story_id, user_id) VALUES ('First comment on mystoryz', '1', '1');
+INSERT INTO comment (content, story_id, user_id) VALUES ('Second comment on mystoryz', '1', '2');
+INSERT INTO comment (content, story_id, user_id) VALUES ('Third comment on mystoryz', '1', '3');
+INSERT INTO comment (content, story_id, user_id) VALUES ('First comment on mystoryz', '2', '1');
+INSERT INTO comment (content, story_id, user_id) VALUES ('Second comment on mystoryz', '2', '2');
+INSERT INTO comment (content, story_id, user_id) VALUES ('Third comment on mystoryz', '2', '3');
