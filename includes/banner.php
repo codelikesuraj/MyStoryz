@@ -22,11 +22,14 @@
         <?php else if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'author'): ?>
         <!-- Banner display for Basic -->
 	<div class="registered">
-		<div class="welcome">
-		        Welcome {username}
-		</div>
 		<div class="panel link">
 			<a href="<?php echo BASE_URL.'/signup.php/?ref='.current_url()&type=2; ?>">Become An Author</a>
+		</div>
+
+		<div class="welcome">
+
+		        {username}
+
 		</div>
 	</div>
 	<!-- // Banner display for Basic -->
