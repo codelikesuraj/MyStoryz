@@ -1,5 +1,5 @@
 <div class="banner">
-        <?php if(!isset($_SESSION['user']): ?>
+        <?php if(!isset($_SESSION['user'])): ?>
 	<!-- Banner display for Visitor -->
 	<div class="unregistered">
 		<div class="quotes">
@@ -19,11 +19,11 @@
 	</div>
 	<!-- // Banner display for Visitor -->
         
-        <?php else if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'author'): ?>
+        <?php elseif(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'author'): ?>
         <!-- Banner display for Basic -->
 	<div class="registered">
 		<div class="panel link">
-			<a href="<?php echo BASE_URL.'/signup.php/?ref='.current_url()&type=2; ?>">Become An Author</a>
+			<a href="<?php echo BASE_URL.'/signup.php/?ref='.current_url().'&type=2'; ?>">Become An Author</a>
 		</div>
 
 		<div class="welcome">
