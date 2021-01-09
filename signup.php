@@ -23,26 +23,48 @@
 			<?php include(ROOT_PATH.'/includes/message.php'); ?>
 			<!-- \\ Display success messages -->
 
-			<!-- Display for Author sign up -->
-			<?php if(isset($_GET['type']) && $_GET['type']=='2'): ?>
+			<!-- Basic signup form -->
+			<?php if(!isset($_GET['type'])): ?>
+				<label>
+					<input type="email" name="email" placeholder="email" value="<?php echo htmlentities($email); ?>" required />
+				</label><br/>
+				<label>
+					<input type="text" name="username" placeholder="username" value="<?php echo htmlentities($username); ?>" required />
+				</label><br/>
+				<label>
+					<input type="password" name="password1" placeholder="
+					password" value="<?php echo htmlentities($password1); ?>" required />
+				</label><br/>
+				<label>
+					<input type="password" name="password2" placeholder="
+					retype password" value="<?php echo htmlentities($password2); ?>" required />
+				</label><br/>
+			<?php endif; ?>
+			<!-- // Basic signup form -->
+			
+			<!-- Author signup form -->
+			<?php if(isset($_GET['type']) && $_GET['type']=='author'): ?>
 				<input type="hidden" name="type" value="author">
-			<!-- \\ Display for Author sign up -->
+				<label>
+					<input type="text" name="first_name" placeholder="first name" value="<?php echo htmlentities($first_name); ?>" required />
+				</label><br/>
+				<label>
+					<input type="text" name="last_name" placeholder="last name" value="<?php echo htmlentities($last_name); ?>" required />
+				</label><br/>
+				<label>
+					<input type="email" name="email" placeholder="email" value="<?php echo htmlentities($email); ?>" required />
+				</label><br/>
+				<label>
+					<input type="text" name="username" placeholder="username" value="<?php echo htmlentities($username); ?>" required />
+				</label><br/>
+				<label>
+					<input type="password" name="password1" placeholder="
+					password" value="<?php echo htmlentities($password1); ?>" required />
+				</label><br/>
+			<?php endif; ?>
+			<!-- // Author signup form -->
 
-			<label>
-				<input type="email" name="email" placeholder="email" value="<?php echo htmlentities($email); ?>" required />
-			</label><br/>
-			<label>
-				<input type="text" name="username" placeholder="username" value="<?php echo htmlentities($username); ?>" required />
-			</label><br/>
-			<label>
-				<input type="password" name="password1" placeholder="
-				password" value="<?php echo htmlentities($password1); ?>" required />
-			</label><br/>
-			<label>
-				<input type="password" name="password2" placeholder="
-				retype password" value="<?php echo htmlentities($password2); ?>" required />
-			</label><br/>
-			<input type="submit" name="signup" value="Sign Up" />
+			<input type="submit" name="signup" value="Update account" />
 		    <p>
 		    	Already have an account ? 
 		    	<?php if(!empty($source)): ?>
