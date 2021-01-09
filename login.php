@@ -1,4 +1,5 @@
 <?php include('conn.php'); ?>
+<?php include(ROOT_PATH.'/includes/login_signup.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>Login | MyStoryz</title>
 </head>
@@ -12,15 +13,16 @@
 		<!-- Login form -->
 		<form method="post">
 			<h2>Login</h2>
+			<?php include(ROOT_PATH.'/includes/error.php'); ?>
 			<label>
-				<input type="text" name="username" placeholder="username or email" required />
+				<input type="text" name="username" placeholder="username or email" value="<?php echo htmlentities($username); ?>" required />
 			</label><br/>
 			<label>
 				<input type="password" name="password" placeholder="
 				password" required />
 			</label><br/>
 			<input type="submit" name="login" value="Sign In" />
-			<p>Don't have an account yet ? <a href="signup.php">Create one</a></p>
+			<p>Don't have an account yet ? <a href="<?php echo BASE_URL.'/signup.php?ref='.$source; ?>">Create one</a></p>
 		</form>
 		<!-- // Login form -->
 

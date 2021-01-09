@@ -1,5 +1,6 @@
 <?php include('../conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+<?php include(ROOT_PATH.'/includes/add_comment.php'); ?>
 
 <!-- Fetch story from title in GET parameter-->
 <?php
@@ -21,7 +22,7 @@ endif;
 <!-- // Fetch all comments -->
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>MyStoryz | <?php echo $story['title']; ?></title>
+	<title>MyStoryz | <?php echo htmlentities($story['title']); ?></title>
 </head>
 <body>
 	<div class="container">
@@ -38,23 +39,23 @@ endif;
 		<div class="story-content">
 			<div class="story-image">
 				<!-- display story image -->
-				<img src="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>" />
+				<img style="width: 100%;" src="<?php echo BASE_URL.'/static/images/'.htmlentities($story['image']); ?>" />
 			</div>
 			<div class="story-info">
 				<!-- display story title -->
-				<h2><?php echo $story['title']; ?></h2>
+				<h2><?php echo htmlentities($story['title']); ?></h2>
 				<!-- display story publish date -->
-				<p>Published on <?php echo date('M Y', strtotime($story['created'])); ?></p>
+				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?></p>
 			</div>
 			<div class="story-text">
 				<!-- display story content -->
-				<p><?php echo $story['content']; ?></p>
+				<p><?php echo htmlentities($story['content']); ?></p>
 			</div>
 		</div>
 		<!-- // Story content -->
 
 		<!-- Comment section -->
-		<div class="comment">
+		<div class="comment" id="comment-submit">
 			<h2>Comments(<?php echo count($comment); ?>)</h2>
 
 			<!-- Display comment box -->
@@ -67,12 +68,12 @@ endif;
 					<li>
 						<div class="comment-card">
 							<div class="user-info">
-								<span><img src="<?php echo BASE_URL.'/static/images/'.$key['user_info']['image']; ?>"></span>
-								<span><?php echo $key['user_info']['username']; ?></span>
-								<span><?php echo date('M Y', strtotime($key['created'])); ?></span>
+								<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
+								<span><?php echo htmlentities($key['user_info']['username']); ?></span>
+								<span><?php echo htmlentities(date('M Y', strtotime($key['created']))); ?></span>
 							</div>
 							<div class="user-comment">
-								<p><?php echo $key['content']; ?></p>
+								<p><?php echo htmlentities($key['content']); ?></p>
 							</div>
 						</div>
 					</li>

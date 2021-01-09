@@ -58,6 +58,19 @@ function current_url()
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	if(isset($_GET)):
+		$i = 0;
+		foreach($_GET as $name => $value):
+			if($i==0){
+				$uri.='?';
+			}else{
+				$uri.='&';
+			}
+			$i++;
+			
+			$uri.=$name.'='.$value;
+		endforeach;
+	endif;
 	return $uri;
 }
 

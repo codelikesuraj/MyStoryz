@@ -1,3 +1,4 @@
+DROP DATABASE mystoryz ;
 CREATE DATABASE IF NOT EXISTS mystoryz DEFAULT CHARACTER SET utf8;
 GRANT ALL ON mystoryz.* TO 'fliplikesuraj'@'localhost' IDENTIFIED BY 'Abdulbaki0818';
 GRANT ALL ON mystoryz.* TO 'fliplikesuraj'@'127.0.0.1' IDENTIFIED BY 'Abdulbaki0818';
@@ -32,7 +33,7 @@ author_id INT(11) NOT NULL,
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
 PRIMARY KEY (id),
-FOREIGN KEY (author_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE NO ACTION,
+FOREIGN KEY (author_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
 INDEX (slug),
 UNIQUE (slug)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -46,20 +47,21 @@ user_id INT(11) NOT NULL,
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
 PRIMARY KEY (id),
-FOREIGN KEY (story_id) REFERENCES story(id) ON UPDATE CASCADE ON DELETE NO ACTION,
-FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE NO ACTION
+FOREIGN KEY (story_id) REFERENCES story(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 INSERT INTO users (username, email, role, password) VALUES ('fliplikesuraj', 'surajabdulbaki19@gmail.com', 'admin', 'dca4b397327451e277d5d61f5e45a6dc');
 INSERT INTO users (username, email, role, password) VALUES ('fliplikeauthor', 'fliplikeauthor@gmail.com', 'author', 'dca4b397327451e277d5d61f5e45a6dc');
 INSERT INTO users (username, email, role, password) VALUES ('fliplikebasic', 'fliplikebasic@gmail.com', 'basic', 'dca4b397327451e277d5d61f5e45a6dc');
 
-INSERT INTO story (content, slug, title, author_id) VALUES ('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+INSERT INTO story (content, slug, title, author_id, published) VALUES ('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'first-post-on-my-storyz', 'First post on MyStoryz', '1');
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'first-post-on-my-storyz', 'First post on MyStoryz', '1', '1');
+INSERT INTO story (content, slug, title, author_id, published) VALUES ('IN THE OLD DAYS, if you had heart disease, sooner or later you died. In recent times, medical science has made considerable advances and doctors have been able to carry out operations to restore the heart to health. Even so, some hearts could not be healed, and the patients died.', 'medical-science', 'Medical Science', '1', '1');
 INSERT INTO comment (content, story_id, user_id) VALUES ('First comment on mystoryz', '1', '1');
 INSERT INTO comment (content, story_id, user_id) VALUES ('Second comment on mystoryz', '1', '2');
 INSERT INTO comment (content, story_id, user_id) VALUES ('Third comment on mystoryz', '1', '3');

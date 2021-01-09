@@ -2,14 +2,14 @@
 session_start();
 //connect to database
 
-$host = 'localhost';
+$host = '127.0.0.1';
 $dbname = 'mystoryz';
 $username = 'fliplikesuraj';
 $password = 'Abdulbaki0818';
 
 try
 {
-	$conn = new PDO("mysql: host=$host; dbname=$dbname", $username, $password);
+	$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 }
 catch(PDOException $error)
 {
