@@ -5,7 +5,7 @@
 <?php checkAuthor(); ?>
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>MyStoryz | Author</title>
+	<title>Author | Mystoryz</title>
 </head>
 <body>
 	<div class="container">

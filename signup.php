@@ -37,6 +37,15 @@
 				<label>
 					<input type="password" name="password2" placeholder="retype password" value="<?php echo htmlentities($password2); ?>" required />
 				</label><br/>
+				<input type="submit" name="signup" value="Create account" />
+			    <p>
+			    	Already have an account ? 
+			    	<?php if(!empty($source)): ?>
+			    		<a href="<?php echo BASE_URL.'/login.php?ref='.$source; ?>">Sign In</a>
+			    	<?php else: ?>
+			    		<a href="login.php">Sign In</a>
+			    	<?php endif; ?>
+			    </p>
 			<?php endif; ?>
 			<!-- // Basic signup form -->
 			
@@ -58,18 +67,14 @@
 				<label>
 					<input type="password" name="password1" placeholder="password" value="<?php echo htmlentities($password1); ?>" required />
 				</label><br/>
+			    <?php if(!empty($source)): ?>
+			    	<a href="<?php echo $source; ?>">Cancel</a>
+			    <?php else: ?>
+			    	<a href="<?php echo BASE_URL; ?>">Cancel</a>
+			    <?php endif; ?>
+				<input type="submit" name="signup" value="Update account" />
 			<?php endif; ?>
 			<!-- // Author signup form -->
-
-			<input type="submit" name="signup" value="Update account" />
-		    <p>
-		    	Already have an account ? 
-		    	<?php if(!empty($source)): ?>
-		    		<a href="<?php echo BASE_URL.'/login.php?ref='.$source; ?>">Sign In</a>
-		    	<?php else: ?>
-		    		<a href="login.php">Sign In</a>
-		    	<?php endif; ?>
-		    </p>
 		</form>
 		<!-- // Sign-up/Registration Form for new user -->
 

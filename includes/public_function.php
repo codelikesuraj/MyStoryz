@@ -119,3 +119,21 @@ function fetchStoryId($slug)
 		return 'error';
 	endif;
 }
+
+// function to ensure its author-user in the author page
+function checkAuthor()
+{
+	if((!isset($_SESSION['user'])) || (isset($_SESSION['user']) && $_SESSION['user']['role'] != 'author')):
+		header('Location: '.BASE_URL.'/login.php/?ref='.current_url());
+		exit(0);
+	endif;
+}
+
+// function to ensure its admin-user in the author page
+function checkAdmin()
+{
+	if((!isset($_SESSION['user'])) || (isset($_SESSION['user']) && $_SESSION['user']['role'] != 'admin')):
+		header('Location: '.BASE_URL.'/login.php/?ref='.current_url());
+		exit(0);
+	endif;
+}

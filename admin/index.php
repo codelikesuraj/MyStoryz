@@ -1,6 +1,11 @@
 <?php include('../conn.php'); ?>
+<?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+
+<!-- ensure user is author -->
+<?php checkAdmin(); ?>
+
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>ADMIN | Mystoryz</title>
+	<title>Admin | Mystoryz</title>
 </head>
 <body>
 	<div class="container">
