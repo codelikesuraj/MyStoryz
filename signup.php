@@ -32,12 +32,10 @@
 					<input type="text" name="username" placeholder="username" value="<?php echo htmlentities($username); ?>" required />
 				</label><br/>
 				<label>
-					<input type="password" name="password1" placeholder="
-					password" value="<?php echo htmlentities($password1); ?>" required />
+					<input type="password" name="password1" placeholder="password" value="<?php echo htmlentities($password1); ?>" required />
 				</label><br/>
 				<label>
-					<input type="password" name="password2" placeholder="
-					retype password" value="<?php echo htmlentities($password2); ?>" required />
+					<input type="password" name="password2" placeholder="retype password" value="<?php echo htmlentities($password2); ?>" required />
 				</label><br/>
 			<?php endif; ?>
 			<!-- // Basic signup form -->
@@ -58,8 +56,7 @@
 					<input type="text" name="username" placeholder="username" value="<?php echo htmlentities($username); ?>" required />
 				</label><br/>
 				<label>
-					<input type="password" name="password1" placeholder="
-					password" value="<?php echo htmlentities($password1); ?>" required />
+					<input type="password" name="password1" placeholder="password" value="<?php echo htmlentities($password1); ?>" required />
 				</label><br/>
 			<?php endif; ?>
 			<!-- // Author signup form -->

@@ -18,8 +18,7 @@
 				<input type="text" name="username" placeholder="username or email" value="<?php echo htmlentities($username); ?>" required />
 			</label><br/>
 			<label>
-				<input type="password" name="password" placeholder="
-				password" required />
+				<input type="password" name="password" placeholder="password" required />
 			</label><br/>
 			<input type="submit" name="login" value="Sign In" />
 			<p>Don't have an account yet ? <a href="<?php echo BASE_URL.'/signup.php?ref='.$source; ?>">Create one</a></p>

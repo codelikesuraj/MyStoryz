@@ -2,7 +2,7 @@
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php $story = getAllStory(); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>Home | MyStoryz</title>
+	<title>MyStoryz | Home</title>
 </head>
 <body>
 	<div class="container">
