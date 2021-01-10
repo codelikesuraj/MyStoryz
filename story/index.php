@@ -1,4 +1,4 @@
-<?php include('../conn.php'); ?>
+<?php include('../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php include(ROOT_PATH.'/includes/add_comment.php'); ?>
 

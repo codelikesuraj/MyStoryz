@@ -20,7 +20,7 @@
 			<form method="post" autocomplete="off" action="<?php echo current_url().'#comment-submit'; ?>">
 				
 				<label>
-					<textarea cols="50" rows="7" name="content" placeholder="Start typing ..."></textarea>
+					<textarea cols="40" rows="7" name="content" placeholder="Start typing ..."></textarea>
 				</label><br/>
 				<input type="submit" name="add_comment" value="Comment" />
 			</form>
