@@ -18,7 +18,7 @@ endif;
 <!-- // Fetch story from title in GET parameter -->
 
 <!-- Fetch all comments -->
-<?php $comment = fetchAllComment($_GET['title']); ?>
+<?php $comment = fetchAllComment($_GET['title']);?>
 <!-- // Fetch all comments -->
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
@@ -56,29 +56,36 @@ endif;
 
 		<!-- Comment section -->
 		<div class="comment" id="comment-submit">
-			<h2>Comments(<?php echo count($comment); ?>)</h2>
+			<h2>Comments(<?php echo $comment=='error'?'0':count($comment);?>)
+			</h2>
 
 			<!-- Display comment box -->
 			<?php include(ROOT_PATH.'/includes/comment_box.php'); ?>
 			<!-- // Display comment box -->
 
 			<!-- Display available comments -->
-			<ul class="available-comments">
-				<?php foreach($comment as $key): ?>
-					<li>
-						<div class="comment-card">
-							<div class="user-info">
-								<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
-								<span><?php echo htmlentities($key['user_info']['username']); ?></span>
-								<span><?php echo htmlentities(date('M Y', strtotime($key['created']))); ?></span>
+			<?php if($comment !== 'error'): ?>
+				<ul class="available-comments">
+					<?php foreach($comment as $key): ?>
+						<li>
+							<div class="comment-card">
+								<div class="user-info">
+									<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
+									<span><?php echo htmlentities($key['user_info']['username']); ?></span>
+									<span><?php echo htmlentities(date('M Y', strtotime($key['created']))); ?></span>
+								</div>
+								<div class="user-comment">
+									<p><?php echo htmlentities($key['content']); ?></p>
+								</div>
 							</div>
-							<div class="user-comment">
-								<p><?php echo htmlentities($key['content']); ?></p>
-							</div>
-						</div>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php else: ?>
+				<div class="comment-card">
+					<p>Be the first to comment!!!</p>
+				</div>
+			<?php endif; ?>
 			<!-- // Display available comments -->
 
 		</div>

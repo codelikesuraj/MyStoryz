@@ -137,3 +137,12 @@ function checkAdmin()
 		exit(0);
 	endif;
 }
+
+// function to convert a title string into a slug
+// example: i am a title => i-am-a-title
+function createSlug(string $title)
+{
+	$title = strtolower($title);
+	$slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
+	return $slug;
+}

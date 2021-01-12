@@ -35,8 +35,8 @@
 			<label>
 				Set status: 
 				<select name="story_status">
-					<option value="0" >Unpublish</option>
-					<option value="1" selected>Publish</option>
+					<option value="unpublish" >Unpublish</option>
+					<option value="publish" selected>Publish</option>
 				</select>
 			</label><br/><br/>
 			<a href="<?php echo BASE_URL.'/author'; ?>">Cancel</a>
