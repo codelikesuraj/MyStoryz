@@ -32,20 +32,20 @@ endif;
 		<!-- // Display navigation -->
 
 		<!-- Display banner -->
-		<?php include(ROOT_PATH.'/includes/banner.php'); ?>
+		<p><?php include(ROOT_PATH.'/includes/banner.php'); ?></p>
 		<!-- // Display banner -->
 
 		<!-- Story content -->
 		<div class="story-content">
+			<div class="story-info">
+				<!-- display story title -->
+				<h2><?php echo ucwords(htmlentities($story['title'])); ?></h2>
+				<!-- display story publish date -->
+				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?></p>
+			</div>
 			<div class="story-image">
 				<!-- display story image -->
 				<img style="width: 100%;" src="<?php echo BASE_URL.'/static/images/'.htmlentities($story['image']); ?>" />
-			</div>
-			<div class="story-info">
-				<!-- display story title -->
-				<h2><?php echo htmlentities($story['title']); ?></h2>
-				<!-- display story publish date -->
-				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?></p>
 			</div>
 			<div class="story-text">
 				<!-- display story content -->
@@ -56,8 +56,7 @@ endif;
 
 		<!-- Comment section -->
 		<div class="comment" id="comment-submit">
-			<h2>Comments(<?php echo $comment=='error'?'0':count($comment);?>)
-			</h2>
+			<h3>Comments(<?php echo $comment=='error'?'0':count($comment);?>)</h3>
 
 			<!-- Display comment box -->
 			<?php include(ROOT_PATH.'/includes/comment_box.php'); ?>

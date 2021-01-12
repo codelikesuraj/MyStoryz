@@ -1,6 +1,9 @@
 <?php include('../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+<?php include(ROOT_PATH.'/author/includes/author_functions.php'); ?>
 <?php checkAuthor(); ?>
+<?php $storyz_count = getPublishedCount($_SESSION['user']['id']);?>
+<?php $comment_count = getTotalCommentCount($_SESSION['user']['id']);?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>MyStoryz | Author</title>
 </head>
@@ -22,8 +25,7 @@
 		<p><strong>Username:</strong> <?php echo htmlentities($_SESSION['user']['username']);?></p>
 		<p><strong>Email:</strong> <?php echo htmlentities($_SESSION['user']['email']);?></p>
 		<p><strong>Created on:</strong> <?php echo htmlentities($_SESSION['user']['created']);?></p>
-		<p><strong>Published Storyz:</strong> 20</p>
-		<p><strong>Number of user comments on storyz:</strong> 540</p>
+		<p><strong>Published Storyz:</strong> <?php echo $storyz_count; ?>&nbsp;&nbsp;<strong>Total user comments:</strong> <?php echo $comment_count; ?></p>
 		<!-- // Display account information -->
 
 		<!-- Display footer -->

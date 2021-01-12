@@ -1,6 +1,8 @@
 <?php include('../../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
+<?php include(ROOT_PATH.'/author/includes/author_functions.php'); ?>
 <?php checkAuthor(); ?>
+<?php $story = getStoryInfo($_SESSION['user']['id']); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>MyStoryz | Manage</title>
 </head>
@@ -16,98 +18,36 @@
 		<!-- // Display sidebar -->
 
 		<!-- Display management table -->
-		<div class="management-table" style="height: 50vw;overflow: scroll;">
+		<div class="management-table" style="height: 50vw; overflow: scroll;">
 			<table border="1">
 				<thead>
 					<th>S/N</th>
 					<th>TITLE</th>
 					<th>COMMENTS</th>
 					<th>STATUS</th>
-					<th>PUBLISHED</th>
+					<th>CREATED</th>
 					<th>MODIFIED</th>
 					<th colspan="2">ACTION</th>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Wonders of medical science</td>
-						<td>52</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Africa and the internet</td>
-						<td>0</td>
-						<td>Not published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Unfinished house</td>
-						<td>876</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>Nigeria and the Olympics</td>
-						<td>14754</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td>Wonders of medical science</td>
-						<td>52</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td>Africa and the internet</td>
-						<td>0</td>
-						<td>Not published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>Unfinished house</td>
-						<td>876</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td>Nigeria and the Olympics</td>
-						<td>14754</td>
-						<td>Published</td>
-						<td>00:00:00 00/00/00</td>
-						<td>00:00:00 00/00/00</td>
-						<td>edit</td>
-						<td>delete</td>
-					</tr>
+					<?php if(is_array($story) && count($story)>0): ?>
+						<?php foreach($story as $single => $data): ?>
+							<tr>
+								<td><?php echo ($single+1); ?></td>
+								<td><?php echo $data['title']; ?></td>
+								<td><?php echo $data['comment']; ?></td>
+								<td><?php echo $data['published']; ?></td>
+								<td><?php echo $data['created']; ?></td>
+								<td><?php echo $data['updated']; ?></td>
+								<td>edit</td>
+								<td>delete</td>
+							</tr>
+						<?php endforeach; ?>
+					<?php else: ?>
+						<tr>
+							<td colspan="8">No story yet !!!</td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 		</div>
