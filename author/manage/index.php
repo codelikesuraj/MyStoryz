@@ -39,8 +39,8 @@
 								<td><?php echo $data['published']; ?></td>
 								<td><?php echo $data['created']; ?></td>
 								<td><?php echo $data['updated']; ?></td>
-								<td>edit</td>
-								<td>delete</td>
+								<td><a href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
+								<td><a href="">delete</a></td>
 							</tr>
 						<?php endforeach; ?>
 					<?php else: ?>

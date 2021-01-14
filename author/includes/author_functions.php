@@ -54,7 +54,7 @@ function getStoryInfo(int $id)
 	global $conn;
 	$final_info = array();
 	$author_id = intval($id, 10);
-	$sql1 = "SELECT id, title, published, created, updated FROM story WHERE author_id = :author_id";
+	$sql1 = "SELECT id, title, published, created, updated, slug FROM story WHERE author_id = :author_id";
 	$result1 = $conn->prepare($sql1);
 	$result1->execute(array(':author_id'=>$author_id));
 	$row1 = $result1->fetchAll(PDO::FETCH_ASSOC);

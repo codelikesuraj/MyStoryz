@@ -6,6 +6,10 @@ $story_title = "";
 $story_content = "";
 $story_image = "";
 $errors = array();
+$edit_id = "";
+$edit_title = "";
+$edit_content = "";
+$edit_image = "";
 
 /************************
 *** Creating a story  ***
@@ -84,28 +88,95 @@ if(isset($_POST['create_story'])):
 		else:
 			array_push($errors, 'Error saving header image');
 		endif;
-		/*you stopped here man and were meant to use this for image upload and saving
-
-								$target_dir = ROOT_PATH.'/static/images/';
-								$target_file = $target_dir.basename($_FILES['story_image']['name']);
-								$uploadOk = 1;
-								$file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-								$target_file = $target_dir.date('HisjmY').'.'.$file_type;
-								if(($file_type == "jpg") || ($file_type == "png")):
-									$uploadOk = 1;
-								else:
-									$uploadOk = 0;
-									array_push($errors, 'File type must be JPG or PNG, file type is '.$file_type);
-								endif;
-								if($uploadOk == 1):
-									move_uploaded_file($_FILES['story_image']['tmp_name'], $target_file);
-								endif;
-								*/
 	endif;
 
 endif;
 
 /************************
 * // Creating a story  **
+************************/
+
+/************************
+***  Editing a story  ***
+************************/
+
+// get slug from url and fill the edit variables
+if(isset($_GET['title'])):
+	$sql1 = "SELECT * FROM story WHERE slug=:slug AND author_id=:author_id LIMIT 1";
+	$result1 = $conn->prepare($sql1);
+	$result1->execute(array(
+		':slug'=>$_GET['title'],
+		':author_id'=>$_SESSION['user']['id']));
+	$row1=$result1->fetch(PDO::FETCH_ASSOC);
+	if(is_array($row1)):
+		$edit_title = $row1['title'];
+		$edit_image = $row1['image'];
+		$edit_content = $row1['content'];
+		$edit_id = $row1['id'];
+	else:
+		header('Location: '.BASE_URL.'/author/manage/');
+		exit(0);
+	endif;
+else:
+	header('Location: '.BASE_URL.'/author/manage/');
+	exit(0);
+endif;
+
+// if new details are submitted to be updated
+if(isset($_POST['edit_story'])):
+	
+	// get and trim form inputs for whitespaces
+	$edit_title = trim($_POST['edit_title']);
+	$edit_content = trim($_POST['edit_content']);
+	$edit_status = trim($_POST['edit_status']);
+	$edit_id = trim($_POST['edit_id']);
+
+	//	check for errors from input
+	if(empty($edit_title)){array_push($errors, 'Please add a title to the edit');}
+	if(empty($edit_content)){array_push($errors, 'Please add content to your edit');}
+	if(empty($edit_status)){array_push($errors, 'Please select a status');}
+
+	// create slug from title and check if a story apart from the current one has the same title
+	if(count($errors)<1):
+		// create slug
+		$edit_slug = createSlug($edit_title);
+		echo $edit_slug;
+		$sql2 = "SELECT * FROM story WHERE slug=:slug AND id<>:id";
+		$result2 = $conn->prepare($sql2);
+		$result2->execute(array(
+			':slug'=>$edit_slug,
+			':id'=>$edit_id));
+		$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		if($row2){array_push($errors, 'Title already exists on another story');}
+	endif;
+
+	// update story if there are no errors
+	if(count($errors)<1):
+			// update post in database
+			switch ($edit_status)
+			{
+				case 'publish':
+					$edit_status = 1;
+					break;
+				case 'unpublish':
+					$edit_status = 0;
+					break;
+				default:
+					$edit_status = 1;
+					break;
+			}
+			$sql2 = "UPDATE story SET content=:content, slug=:slug, title=:title, published=:published, updated=current_timestamp WHERE id = :id";
+			$result2 = $conn->prepare($sql2);
+			$result2->execute(array(
+				':content'=>$edit_content,
+				':slug'=>$edit_slug,
+				':title'=>$edit_title,
+				':published'=>$edit_status,
+				':id'=>$edit_id
+			));
+	endif;
+endif;
+/************************
+** // Editing a story  **
 ************************/
 ?>

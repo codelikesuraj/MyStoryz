@@ -1,11 +1,9 @@
-<?php include('../../mystoryz/conn.php'); ?>
+<?php include('../../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
-
-<!-- ensure user is author -->
 <?php checkAuthor(); ?>
-
+<?php include(ROOT_PATH.'/author/includes/create_edit.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>Author | Mystoryz</title>
+	<title>MyStoryz | Edit</title>
 </head>
 <body>
 	<div class="container">
@@ -14,20 +12,30 @@
 		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
-		<!-- Display sidebar -->
-		<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
-		<!-- // Display sidebar -->
-
-		<!-- Display account information -->
-		<h2>Account Information and Statistics</h2>
-		<p><strong>First Name:</strong> <?php echo htmlentities($_SESSION['user']['first_name']);?></p>
-		<p><strong>Last Name:</strong> <?php echo htmlentities($_SESSION['user']['last_name']);?></p>
-		<p><strong>Username:</strong> <?php echo htmlentities($_SESSION['user']['username']);?></p>
-		<p><strong>Email:</strong> <?php echo htmlentities($_SESSION['user']['email']);?></p>
-		<p><strong>Created on:</strong> <?php echo htmlentities($_SESSION['user']['created']);?></p>
-		<p><strong>Published Storyz:</strong> 20</p>
-		<p><strong>Number of user comments on storyz:</strong> 540</p>
-		<!-- // Display account information -->
+		<!-- Display story creation form -->
+		<h2>Edit Story</h2>
+		<form action="<?php echo BASE_URL.'/author/edit/?title='.$_GET['title']; ?>" method="post">
+			<p><?php include(ROOT_PATH.'/includes/error.php'); ?></p>
+			<input type="hidden" name="edit_id" value="<?php echo $edit_id; ?>" />
+			<label>
+				Title<br/>
+				<input type="text" name="edit_title" placeholder="Add story title ..." value="<?php echo htmlentities($edit_title); ?>" />
+			</label><br/><br/>
+			<label>
+				Body<br/>
+				<textarea name="edit_content" placeholder="Story goes here ..." cols="40" rows="20"><?php echo htmlentities($edit_content); ?></textarea>
+			</label><br/><br/>
+			<label>
+				Set new status: 
+				<select name="edit_status">
+					<option value="unpublish" >Unpublish</option>
+					<option value="publish" selected>Publish</option>
+				</select>
+			</label><br/><br/>
+			<a href="<?php echo BASE_URL.'/author/manage'; ?>">Cancel</a>
+			<input type="submit" name="edit_story" value="Update" />
+		</form>
+		<!-- Display story creation form -->
 
 		<!-- Display footer -->
 		<?php include(ROOT_PATH.'/includes/footer.php'); ?>
