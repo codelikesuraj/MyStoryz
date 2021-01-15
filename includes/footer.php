@@ -1,4 +1,5 @@
 <div class="footer">
+	<!--
 	<div class="top-text">
 		<h2>MyStoryz</h2>
 	</div>
@@ -17,5 +18,6 @@
 				<li><a href=""><img src="facebook.png"></a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
+	<p>Mystoryz &copy; <?php echo date('Y'); ?></p>
 </div>

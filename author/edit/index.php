@@ -1,7 +1,14 @@
 <?php include('../../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php checkAuthor(); ?>
+<?php
+if(!isset($_GET['title'])):
+	header('Location: '.BASE_URL.'/author/manage/');
+	exit(0);
+endif;
+?>
 <?php include(ROOT_PATH.'/author/includes/create_edit.php'); ?>
+
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<title>MyStoryz | Edit</title>
 </head>

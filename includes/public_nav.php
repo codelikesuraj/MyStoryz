@@ -1,6 +1,6 @@
 <nav class="public_nav">
 	<div class="logo">
-		<h1><a href="<?php echo BASE_URL; ?>">MyStoryz</a></h1>
+		<h1>MyStoryz</h1>
 	</div>
 	<div class="nav-links">
 		<ul>

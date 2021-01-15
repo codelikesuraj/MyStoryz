@@ -40,18 +40,23 @@ endif;
 			<div class="story-info">
 				<!-- display story title -->
 				<h2><?php echo ucwords(htmlentities($story['title'])); ?></h2>
+				<br/>
 				<!-- display story publish date -->
-				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?></p>
+
+				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?> by <?php echo '<strong>'.htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']).'</strong>'.' @'.htmlentities($story['author_info']['username']); ?></p>
 			</div>
+			<br/>
 			<div class="story-image">
 				<!-- display story image -->
 				<img style="width: 100%;" src="<?php echo BASE_URL.'/static/images/'.htmlentities($story['image']); ?>" />
 			</div>
+			<br/>
 			<div class="story-text">
 				<!-- display story content -->
 				<p><?php echo htmlentities($story['content']); ?></p>
 			</div>
 		</div>
+		<hr>
 		<!-- // Story content -->
 
 		<!-- Comment section -->
@@ -71,7 +76,7 @@ endif;
 								<div class="user-info">
 									<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
 									<span><?php echo htmlentities($key['user_info']['username']); ?></span>
-									<span><?php echo htmlentities(date('M Y', strtotime($key['created']))); ?></span>
+									<span><?php echo 'on '.htmlentities(date('M j, Y', strtotime($key['created']))); ?></span>
 								</div>
 								<div class="user-comment">
 									<p><?php echo htmlentities($key['content']); ?></p>
@@ -88,6 +93,8 @@ endif;
 			<!-- // Display available comments -->
 
 		</div>
+		<br/>
+		<br/>
 		<!-- // Comment section -->
 
 		<!-- Display footer -->

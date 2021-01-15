@@ -17,6 +17,11 @@ catch(PDOException $error)
 }
 
 // Define constants for easy navigation
-define('BASE_URL', 'http://localhost/myfolder/mystoryz');
+/*foreach($_SERVER as $key => $data):
+	echo $key.' => '.$data;
+	echo '<br>';
+endforeach;
+*/
+define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/myfolder/mystoryz');
 define('ROOT_PATH', realpath(dirname(__FILE__)));
 ?>

@@ -6,6 +6,8 @@ $story_title = "";
 $story_content = "";
 $story_image = "";
 $errors = array();
+
+
 $edit_id = "";
 $edit_title = "";
 $edit_content = "";
@@ -117,9 +119,6 @@ if(isset($_GET['title'])):
 		header('Location: '.BASE_URL.'/author/manage/');
 		exit(0);
 	endif;
-else:
-	header('Location: '.BASE_URL.'/author/manage/');
-	exit(0);
 endif;
 
 // if new details are submitted to be updated

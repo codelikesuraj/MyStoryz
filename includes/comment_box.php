@@ -3,11 +3,9 @@
 	<!-- Comment box for logged-out user -->
 	<?php if(!isset($_SESSION['user'])): ?>
 		<div class="not-logged-in">
-			<span><p>Want to add<br/> a comment?</p></span>
-			<span><p>
-				<a href="<?php echo BASE_URL.'/login.php/?ref='.current_url(); ?>">Login</a><br/>
-				 - or -<br/>
-				 <a href="<?php echo BASE_URL.'/signup.php/?ref='.current_url(); ?>">Sign Up</a></p></span>
+			<p>
+				<a href="<?php echo BASE_URL.'/login.php/?ref='.current_url(); ?>">Add a comment</a>
+			</p>
 		</div>
 	<?php endif; ?>
 	<!-- // Comment box for Visitor -->

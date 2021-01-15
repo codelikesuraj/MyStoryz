@@ -3,3 +3,240 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		/***** DEFAULTS *****/
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial 'Averia Serif Libre', cursive;
+}
+html{
+	height: 100%;
+	box-sizing: border-box;
+}
+body{
+	position: relative;
+	margin: 0;
+	padding-bottom: 6rem;
+	min-height: 100%;
+}
+.container{
+	width: 90%;
+	margin: 0px auto;
+	padding-top: 5px;
+}
+/* HEADINGS DEFAULT */
+h1, h2, h3, h4, h5, h6, a, p{
+	color: #444;
+	font-family: Arial, 'Averia Serif Libre', cursive;
+}
+a{
+	text-decoration: none;
+}
+ul, ol{
+	margin-left: 40px;
+	list-style: none;
+}
+hr{
+	margin: 10px 0px;
+	opacity: .25;
+}
+
+/* Public Nav */
+.public_nav{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	overflow: hidden;
+	background-color: #3e606f;
+	border-radius: 6px 6px 6px 6px;
+}
+.public_nav .logo{
+	flex: 3;
+}
+.public_nav .nav-links{
+	flex: 1;
+}
+.public_nav ul{
+	list-style-type: none;
+	float: right;
+}
+.public_nav ul li{
+	float: left;
+	font-family: 'Noto Serif', serif;
+}
+.public_nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 20px 28px;
+	text-decoration: none;
+}
+.public_nav ul li a:hover{
+	color: #B9E6F2;
+	background-color: #334F5C;
+}
+/* LOGO */
+.public_nav .logo{
+	float: left;
+	padding-top: 5px;
+	padding-left: 40px;
+}
+.public_nav .logo h1{
+	margin-bottom: 20px;
+	color: #B9E6F2;
+	font-size: 2.5em;
+	letter-spacing: 3px;
+	font-weight: 400;
+	font-family: Arial, 'Tangerine', cursive;
+}
+
+/* BANNER: Welcome message */
+.banner{
+	display: flex;
+	align-items: center;
+	margin: 5px auto;
+	min-height: 50px;
+	max-height: 400px;
+	color: white;
+	border-radius: 5px;
+	background-size: 100% 100%;
+}
+
+.banner .unregistered{
+	flex: 1;
+	width: 45%;
+	padding: 20px;
+}
+.banner .unregistered .login-signup{
+	float: right;
+}
+.banner .unregistered .login-signup .signup{
+	text-align: center;
+	border: solid 2px #3e606f;
+	border-radius: 5px;
+	margin-left: 10px;
+	padding: 3px 5px;
+}
+.banner .unregistered .login-signup .login{
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 10px;
+	padding: 3px 5px;
+}
+.banner .unregistered .login-signup .login:hover, .signup:hover{
+	background: #3e606f;
+	color: white;
+}
+
+.banner .registered{
+	display: flex;
+	color: #444;
+	padding: 20px;
+	width: 100%;
+}
+.banner .registered .welcome{
+	flex: 3;
+}
+.banner .registered .panel-link{
+	flex: 1;
+}
+.banner .registered h1{
+	color: #B9E6F2;
+	margin: 25px 0px;
+	font-size: 2.4em;
+	font-family: 'Averia Serif Libre', cursive;
+}
+.banner .welcome_msg p{
+	color: white;
+	font-size: 1.5em;
+	line-height: 1.8em;
+	font-family: 'Noto Serif', serif;
+}
+
+/* BANNER: Login Form */
+.banner .login_div{
+	flex: 1;
+	width: 50%;
+}
+.banner .login_div form{
+	margin-top: 40px;
+}
+.banner .login_div form h2{
+	color: white;
+	margin-bottom: 20px;
+	font-family: 'Noto Serif', serif;
+}
+.banner .login_div form input{
+	width: 60%;
+	color: black;
+	border: 1px solid white;
+	margin: 10px auto;
+	letter-spacing: 1.3px;
+	font-family: 'Noto Serif', serif;
+	background: white;
+}
+.banner .login_div form button{
+	display: block;
+	background: #006384;
+	margin-left: 20%;
+}
+.story-list{
+	display: flex;
+	flex-direction: column;
+}
+.story-list .story-card{
+	display: flex;
+	flex-direction: column;
+	width: 325px;
+	height: auto;
+	margin: 20px auto;
+	border-radius: 5px;
+
+}
+.story-list .story-card .story-image{
+	flex: 2;
+}
+.story-list .story-card .story-image img{
+	width: 100%;
+	object-fit: contain;
+	max-height: 350px;
+}
+.story-list .story-card .author-info{
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.story-list .story-card .author-info .author-image{
+	flex: 1;
+}
+.story-list .story-card .author-info .group{
+	flex: 4;
+}
+.story-list .story-card .story-info{
+	flex: 1;
+}
+.footer p{
+	padding: 30px;
+	text-align: center;
+	color: #B9E6F2;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #3e606f;
+	border-radius: 6px 6px 6px 6px;
+}
+.comment-box{
+	margin: 20px;
+}
+.not-logged-in a{
+	padding: 3px 5px;
+	border-radius: 5px;
+	border: solid 2px #3e606f;
+}
+.not-logged-in a:hover{
+	background: #3e606f;
+	color: white;
+}
+</style>

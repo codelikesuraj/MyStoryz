@@ -20,17 +20,6 @@ function getAllStory()
 	return $final_result;
 }
 
-// fetch author information by the id
-function getAuthor($id)
-{
-	global $conn;	// include database connection
-	$sql = "SELECT id, username,image FROM users WHERE id=:id LIMIT 1";
-	$query = $conn->prepare($sql);
-	$query->execute(array(':id'=>$id));
-	$result = $query->fetch(PDO::FETCH_ASSOC);
-	return $result;
-}
-
 // fetch a single published story by the slug
 function getSingleStory(string $slug)
 {
@@ -48,6 +37,17 @@ function getSingleStory(string $slug)
 		return 'error';	// return error text
 	endif;
 }
+// fetch author information by the id
+function getAuthor($id)
+{
+	global $conn;	// include database connection
+	$sql = "SELECT id, username,image,first_name, last_name FROM users WHERE id=:id LIMIT 1";
+	$query = $conn->prepare($sql);
+	$query->execute(array(':id'=>$id));
+	$result = $query->fetch(PDO::FETCH_ASSOC);
+	return $result;
+}
+
 
 // get url of current page
 function current_url()

@@ -16,34 +16,51 @@
 		<!-- // Display banner -->
 
 		<!-- Display list of recent storyz -->
+		<h2>Recent Storyz ...</h2>
+		<hr>
 		<div class="story-list">
-			<h2>Recent Storyz ...</h2>
-			<ul>
-				<?php foreach($story as $key):?>
-				<li>
-					<div class="story-card">
-						<div class="author-info">
+			<?php foreach($story as $key):?>
+				<div class="story-card">
 
-							<!-- display author profile (image & username) and story publish date-->
-							<img class="author-image" src="<?php echo BASE_URL.'/static/images/'.$key['story_author']['image']; ?>" /><?php echo $key['story_author']['username']; ?><br/>Published on <?php echo date('M Y', strtotime($key['created'])); ?>
+					<!-- display story image -->
+					<div class="story-image" >
+						<img src="<?php echo BASE_URL.'/static/images/'.$key['image']; ?>">
+					</div>
+
+					<div class="author-info">
+						
+						<!-- display author profile (image & username) and story publish date-->
+						<div class="author-image">
+							<img src="<?php echo BASE_URL.'/static/images/'.$key['story_author']['image']; ?>" >
 						</div>
+						<div class="group">
+						<div class="author-name">
+							<?php echo 
+							'<strong>'
+							.htmlentities($key['story_author']['first_name'])
+							.' '
+							.htmlentities($key['story_author']['last_name'])
+							.'</strong>'
+							.' @'
+							.htmlentities($key['story_author']['username']);
+							?>
+						</div>
+						<div class="date">
+							<?php echo date('M j, Y', strtotime($key['created'])); ?>
+						</div>
+					</div>
+					</div>
+
+						
+					<!-- display story title -->
+					<div class="story-info">
 						<a href="<?php echo BASE_URL.'/story?title='.$key['slug']; ?>">
-
-							<!-- display story image -->
-							<div class="story-image" >
-								<img style="width: 50%; height: auto;" src="<?php echo BASE_URL.'/static/images/'.$key['image']; ?>">
-							</div>
-							<div class="story-info">
-
-								<!-- display story title -->
-								<h3 class="story-title"><?php echo $key['title']; ?></h3>
-								<p class="story-dummy">Read more...</p>
-							</div>
+							<h2 class="story-title"><?php echo ucfirst(htmlentities($key['title'])); ?></h2>
+							<p class="story-dummy">Read more...</p>
 						</a>
 					</div>
-				</li>
+				</div>
 			<?php endforeach; ?>
-			</ul>
 		</div>
 		<!-- // Display list of recent storyz -->
 		
