@@ -12,7 +12,7 @@
 
 
 		<!-- Sign-up/Registration Form for new user -->
-		<form method="post">
+		<form method="post" class="myform">
 			<h2>Sign Up</h2>
 
 			<!-- Display sign up errors -->
@@ -37,7 +37,7 @@
 				<label>
 					<input type="password" name="password2" placeholder="retype password" value="<?php echo htmlentities($password2); ?>" required />
 				</label><br/>
-				<input type="submit" name="signup" value="Create account" />
+				<input class="sign-up-btn" type="submit" name="signup" value="Create account" />
 			    <p>
 			    	Already have an account ? 
 			    	<?php if(!empty($source)): ?>

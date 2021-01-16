@@ -69,22 +69,20 @@ endif;
 
 			<!-- Display available comments -->
 			<?php if($comment !== 'error'): ?>
-				<ul class="available-comments">
+				<div class="available-comments">
 					<?php foreach($comment as $key): ?>
-						<li>
-							<div class="comment-card">
-								<div class="user-info">
-									<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
-									<span><?php echo htmlentities($key['user_info']['username']); ?></span>
-									<span><?php echo 'on '.htmlentities(date('M j, Y', strtotime($key['created']))); ?></span>
-								</div>
-								<div class="user-comment">
-									<p><?php echo htmlentities($key['content']); ?></p>
-								</div>
+						<div class="comment-card">
+							<div class="user-info">
+								<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
+								<span><?php echo htmlentities($key['user_info']['username']); ?></span>
+								<span><?php echo 'on '.htmlentities(date('M j, Y', strtotime($key['created']))); ?></span>
 							</div>
-						</li>
+							<div class="user-comment">
+								<p><?php echo htmlentities($key['content']); ?></p>
+							</div>
+						</div>
 					<?php endforeach; ?>
-				</ul>
+				</div>
 			<?php else: ?>
 				<div class="comment-card">
 					<p>Be the first to comment!!!</p>

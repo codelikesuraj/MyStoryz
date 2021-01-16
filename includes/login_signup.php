@@ -31,8 +31,8 @@ if(isset($_POST['signup']))
 	*************************/
 	if($type === 'basic'):
 		// get and trim form inputs for whitespaces
-		$email = trim($_POST['email']);
-		$username = trim($_POST['username']);
+		$email = strtolower(trim($_POST['email']));
+		$username = strtolower(trim($_POST['username']));
 		$password1 = trim($_POST['password1']);
 		$password2 = trim($_POST['password2']);
 
@@ -88,10 +88,10 @@ if(isset($_POST['signup']))
 	**************************/
 	if($type==='author'):
 		// get and trim form inputs for whitespaces
-		$first_name = trim($_POST['first_name']);
-		$last_name = trim($_POST['last_name']);
-		$email = trim($_POST['email']);
-		$username = trim($_POST['username']);
+		$first_name = strtolower(trim($_POST['first_name']));
+		$last_name = strtolower(trim($_POST['last_name']));
+		$email = strtolower(trim($_POST['email']));
+		$username = strtolower(trim($_POST['username']));
 		$password1 = trim($_POST['password1']);
 
 		// check for errors from input
@@ -170,7 +170,7 @@ if(isset($_POST['signup']))
 if(isset($_POST['login']))
 {
 	// get and trim form inputs for whitespaces
-	$username = trim($_POST['username']);
+	$username = strtolower(trim($_POST['username']));
 	$password1 = trim($_POST['password']);
 
 	// check for errors from input

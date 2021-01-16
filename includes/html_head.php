@@ -125,7 +125,10 @@ hr{
 	margin-left: 10px;
 	padding: 3px 5px;
 }
-.banner .unregistered .login-signup .login:hover, .signup:hover{
+.banner .unregistered .login-signup .login:hover{
+	text-decoration: underline;
+}
+.banner .unregistered .login-signup .signup:hover{
 	background: #3e606f;
 	color: white;
 }
@@ -192,18 +195,20 @@ hr{
 	width: 325px;
 	height: auto;
 	margin: 20px auto;
-	border-radius: 5px;
-
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 0px black;
 }
 .story-list .story-card .story-image{
 	flex: 2;
 }
 .story-list .story-card .story-image img{
+	border-radius: 20px 20px 0px 0px;
 	width: 100%;
 	object-fit: contain;
 	max-height: 350px;
 }
 .story-list .story-card .author-info{
+	margin: 5px;
 	flex: 1;
 	display: flex;
 	flex-direction: row;
@@ -217,6 +222,7 @@ hr{
 }
 .story-list .story-card .story-info{
 	flex: 1;
+	padding: 10px;
 }
 .footer p{
 	padding: 30px;
@@ -238,5 +244,57 @@ hr{
 .not-logged-in a:hover{
 	background: #3e606f;
 	color: white;
+}
+.btn{
+	width: 100%;
+}
+/* FORM DEFAULTS */
+.myform{
+	width: 75%;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 5px;
+	padding-bottom: 20px;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 0px black;
+}
+.myform h2{
+	margin: 25px auto;
+	text-align: center;
+	font-family: 'Arial', 'Averia Serif Libre', cursive;
+}
+.myform input{
+	width: 70%;
+	display: block;
+	padding: 13px 13px;
+	font-size: 1em;
+	margin: 5px auto 10px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background: transparent;
+	border: 1px solid #3E606F;
+}
+.myform input:focus{
+	outline-color: #3e606f;
+}
+.myform .login-btn, .myform .sign-up-btn{
+	width: 70%;
+	border: solid 2px #3e606f;
+	border-radius: 5px;
+}
+.myform .login-btn:hover, .myform .login-btn:focus, .myform .sign-up-btn:hover, .myform .sign-up-btn:focus{
+	background: #3e606f;
+	color: white;
+}
+.myform a{
+	text-decoration: underline;
+}
+.error{
+	color: #a94442;
+	background: #f2dede;
+	border: 1px solid #a94442;
+	margin-bottom: 20px;
 }
 </style>

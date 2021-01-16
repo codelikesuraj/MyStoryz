@@ -14,7 +14,6 @@
 	<?php if(isset($_SESSION['user'])): ?>
 		<div class="logged-in">
 			<?php include(ROOT_PATH.'/includes/error.php'); ?>
-			<?php include(ROOT_PATH.'/includes/message.php'); ?>
 			<form method="post" autocomplete="off" action="<?php echo current_url().'#comment-submit'; ?>">
 				
 				<label>

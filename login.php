@@ -11,7 +11,7 @@
 		<!-- // Display navigation -->
 
 		<!-- Login form -->
-		<form method="post">
+		<form method="post" class="myform" autocomplete="off">
 			<h2>Login</h2>
 			<?php include(ROOT_PATH.'/includes/error.php'); ?>
 			<label>
@@ -20,7 +20,7 @@
 			<label>
 				<input type="password" name="password" placeholder="password" required />
 			</label><br/>
-			<input type="submit" name="login" value="Sign In" />
+			<input class="login-btn" type="submit" name="login" value="Sign In" />
 			<p>Don't have an account yet ? <a href="<?php echo BASE_URL.'/signup.php?ref='.$source; ?>">Create one</a></p>
 		</form>
 		<!-- // Login form -->
