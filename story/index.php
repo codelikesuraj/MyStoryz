@@ -73,9 +73,17 @@ endif;
 					<?php foreach($comment as $key): ?>
 						<div class="comment-card">
 							<div class="user-info">
-								<span><img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>"></span>
-								<span><?php echo htmlentities($key['user_info']['username']); ?></span>
-								<span><?php echo 'on '.htmlentities(date('M j, Y', strtotime($key['created']))); ?></span>
+								<div class="user-image">
+									<img src="<?php echo BASE_URL.'/static/images/'.htmlentities($key['user_info']['image']); ?>">
+								</div>
+								<div class="user-data">
+									<div class="name">
+										<?php echo '@'. htmlentities($key['user_info']['username']); ?>
+									</div>
+									<div class="date">
+										<?php echo htmlentities(date('M j, Y', strtotime($key['created']))); ?>
+									</div>
+								</div>
 							</div>
 							<div class="user-comment">
 								<p><?php echo htmlentities($key['content']); ?></p>

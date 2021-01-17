@@ -236,6 +236,21 @@ hr{
 .comment-box{
 	margin: 20px;
 }
+.comment-box textarea{
+	width: 90%;
+	padding: 5px;
+}
+.comment-box input{
+	margin-top: 10px;
+	background: transparent;
+	padding: 3px 5px;
+	border-radius: 5px;
+	border: solid 2px #3e606f;
+}
+.comment-box input:hover{
+	background: #3e606f;
+	color: white;
+}
 .not-logged-in a{
 	padding: 3px 5px;
 	border-radius: 5px;
@@ -296,5 +311,36 @@ hr{
 	background: #f2dede;
 	border: 1px solid #a94442;
 	margin-bottom: 20px;
+	text-align: center;
+	padding: 5px;
+}
+.available-comments{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+.available-comments .comment-card{
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	height: auto;
+	margin-top: 20px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.available-comments .comment-card .user-info{
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+.available-comments .comment-card .user-info .user-data{
+	font-size: 1em;
+}
+.available-comments .comment-card .user-comment{
+	flex: 2;
+	margin: 5px 0px 5px 15px;
+	padding: 5px;
+	font-size: 1.2em;
 }
 </style>
