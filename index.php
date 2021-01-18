@@ -55,8 +55,10 @@
 					<!-- display story title -->
 					<div class="story-info">
 						<a href="<?php echo BASE_URL.'/story?title='.$key['slug']; ?>">
-							<h2 class="story-title"><?php echo ucfirst(htmlentities($key['title'])); ?></h2>
-							<p class="story-dummy">Read more...</p>
+							<h2 class="story-title"><?php echo strtoupper(htmlentities($key['title'])); ?></h2>
+							<div><p class="story-content"><?php echo htmlentities($key['content']); ?></p></div>
+							<strong>...</strong>
+							<p style="text-align: center; text-decoration: underline;" class="story-dummy">Read more</p>
 						</a>
 					</div>
 				</div>

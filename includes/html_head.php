@@ -224,6 +224,11 @@ hr{
 	flex: 1;
 	padding: 10px;
 }
+.story-list .story-card .story-info .story-content{
+	max-height: 50px;
+	overflow: hidden;
+	margin: 10px 0px 10px 0px;
+}
 .footer p{
 	padding: 30px;
 	text-align: center;

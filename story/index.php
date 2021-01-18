@@ -39,11 +39,11 @@ endif;
 		<div class="story-content">
 			<div class="story-info">
 				<!-- display story title -->
-				<h2><?php echo ucwords(htmlentities($story['title'])); ?></h2>
+				<h2><?php echo strtoupper(htmlentities($story['title'])); ?></h2>
 				<br/>
 				<!-- display story publish date -->
 
-				<p>Published on <?php echo htmlentities(date('M Y', strtotime($story['created']))); ?> by <?php echo '<strong>'.htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']).'</strong>'.' @'.htmlentities($story['author_info']['username']); ?></p>
+				<p><?php echo htmlentities(date('M j, Y', strtotime($story['created']))); ?><strong> || </strong><?php echo '<strong>'.htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']).'</strong>'.' @'.htmlentities($story['author_info']['username']); ?></p>
 			</div>
 			<br/>
 			<div class="story-image">
