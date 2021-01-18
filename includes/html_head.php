@@ -225,7 +225,7 @@ hr{
 	padding: 10px;
 }
 .story-list .story-card .story-info .story-content{
-	max-height: 50px;
+	max-height: 100px;
 	overflow: hidden;
 	margin: 10px 0px 10px 0px;
 }
