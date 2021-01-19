@@ -1,6 +1,7 @@
 <?php include('conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/login_signup.php'); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Login | MyStoryz</title>
 </head>
 <body>

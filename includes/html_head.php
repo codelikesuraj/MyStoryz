@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
 		/***** DEFAULTS *****/
 *{
@@ -348,4 +347,98 @@ hr{
 	padding: 5px;
 	font-size: 1.2em;
 }
+
+/* Public Nav */
+.author_nav{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	overflow: hidden;
+	background-color: #444;
+	border-radius: 6px 6px 6px 6px;
+	padding: 30px 10px 30px 10px;
+}
+.author_nav a, .name
+{
+	color: #eec;
+}
+.author_nav .logo{
+	margin: 10px 0px 10px 0px;
+	flex: 3;
+}
+.author_nav .nav-links{
+	margin: 10px 0px 10px 0px;
+	display: flex;
+	flex: 1;
+}
+.author_nav .nav-links .home{
+	flex: 1;
+	align-self: flex-start;
+}
+.author_nav .nav-links .name{
+	flex: 1;
+	align-self: flex-end;
+}
+
+/* Author body */
+.author-body{
+	display: flex;
+	margin-bottom: 10px;
+	padding: 10px;
+	min-height: 80vh;
+}
+
+/* Author sidebar */
+.author-sidebar{
+	font-size: 14px;
+	width: 15%;
+	margin: 0px auto 0px auto;
+}
+.author-sidebar .nav-links a{
+	text-align: center;
+	display: block;
+	border-bottom: 2px solid gray;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+.author-sidebar .nav-links a:hover{
+	padding-left: 10px;
+}
+.author-sidebar h3, .author-panel-info h3, .create-form h3, .management-table h3{
+	text-align: center;
+	background-color: #444;
+	width: auto;
+	color: #eec;
+	padding: 5px;
+}
+/* Author panel info */
+.author-panel-info{
+	width: auto;
+}
+.author-panel-info .info{
+	margin-top: 5px;
+}
+.author-panel-info p{
+	padding: 5px;
+	width: 100%;
+}
+
+/* Create form */
+.create-form{
+	width: auto;
+}
+
+/* Management table */
+.management-table{
+	width: auto;
+}
+
+.author-panel-info, .create-form, .management-table{
+	font-size: 14px;
+	width: 85%;
+	margin: 0px auto 0px 10px;
+}
+
+
 </style>

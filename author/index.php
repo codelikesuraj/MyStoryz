@@ -14,19 +14,27 @@
 		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
-		<!-- Display sidebar -->
-		<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
-		<!-- // Display sidebar -->
+		<div class="author-body">
+			
+			<!-- Display sidebar -->
+			<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
+			<!-- // Display sidebar -->
 
-		<!-- Display account information -->
-		<h2>Account Information and Statistics</h2>
-		<p><strong>First Name:</strong> <?php echo htmlentities($_SESSION['user']['first_name']);?></p>
-		<p><strong>Last Name:</strong> <?php echo htmlentities($_SESSION['user']['last_name']);?></p>
-		<p><strong>Username:</strong> <?php echo htmlentities($_SESSION['user']['username']);?></p>
-		<p><strong>Email:</strong> <?php echo htmlentities($_SESSION['user']['email']);?></p>
-		<p><strong>Created on:</strong> <?php echo htmlentities($_SESSION['user']['created']);?></p>
-		<p><strong>Published Storyz:</strong> <?php echo $storyz_count; ?>&nbsp;&nbsp;<strong>Total user comments:</strong> <?php echo $comment_count; ?></p>
-		<!-- // Display account information -->
+			<div class="author-panel-info">
+				<!-- Display account information -->
+				<h3>Account Information and Statistics</h3>
+				<div class="info">
+					<p><strong>First Name:</strong> <?php echo htmlentities($_SESSION['user']['first_name']);?></p>
+					<p><strong>Last Name:</strong> <?php echo htmlentities($_SESSION['user']['last_name']);?></p>
+					<p><strong>Username:</strong> <?php echo htmlentities($_SESSION['user']['username']);?></p>
+					<p><strong>Email:</strong> <?php echo htmlentities($_SESSION['user']['email']);?></p>
+					<p><strong>Created on:</strong> <?php echo htmlentities($_SESSION['user']['created']);?></p>
+					<p><strong>Published Storyz:</strong> <?php echo $storyz_count; ?></p>
+					<p><strong>Total user comments:</strong> <?php echo $comment_count; ?></p>
+				</div>
+				<!-- // Display account information -->
+			</div>
+		</div>
 
 		<!-- Display footer -->
 		<?php include(ROOT_PATH.'/includes/footer.php'); ?>

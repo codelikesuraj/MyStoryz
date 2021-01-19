@@ -13,45 +13,50 @@
 		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
-		<!-- Display sidebar -->
-		<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
-		<!-- // Display sidebar -->
+		<div class="author-body">
+		
+			<!-- Display sidebar -->
+			<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
+			<!-- // Display sidebar -->
 
-		<!-- Display management table -->
-		<div class="management-table" style="height: 50vw; overflow: scroll;">
-			<table border="1">
-				<thead>
-					<th>S/N</th>
-					<th>TITLE</th>
-					<th>COMMENTS</th>
-					<th>STATUS</th>
-					<th>CREATED</th>
-					<th>MODIFIED</th>
-					<th colspan="2">ACTION</th>
-				</thead>
-				<tbody>
-					<?php if(is_array($story) && count($story)>0): ?>
-						<?php foreach($story as $single => $data): ?>
+			<!-- Display management table -->
+			<div class="management-table" style="height: 50vw; overflow: scroll;">
+				<h3> Storyz Dashboard</h3>
+				<table border="1" style="width: 100%;">
+					<thead>
+						<th>S/N</th>
+						<th>TITLE</th>
+						<th>COMMENTS</th>
+						<th>STATUS</th>
+						<th>CREATED</th>
+						<th>MODIFIED</th>
+						<th colspan="2">ACTION</th>
+					</thead>
+					<tbody>
+						<?php if(is_array($story) && count($story)>0): ?>
+							<?php foreach($story as $single => $data): ?>
+								<tr>
+									<td><?php echo ($single+1); ?></td>
+									<td><?php echo $data['title']; ?></td>
+									<td><?php echo $data['comment']; ?></td>
+									<td><?php echo $data['published']; ?></td>
+									<td><?php echo $data['created']; ?></td>
+									<td><?php echo $data['updated']; ?></td>
+									<td><a href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
+									<td><a href="">delete</a></td>
+								</tr>
+							<?php endforeach; ?>
+						<?php else: ?>
 							<tr>
-								<td><?php echo ($single+1); ?></td>
-								<td><?php echo $data['title']; ?></td>
-								<td><?php echo $data['comment']; ?></td>
-								<td><?php echo $data['published']; ?></td>
-								<td><?php echo $data['created']; ?></td>
-								<td><?php echo $data['updated']; ?></td>
-								<td><a href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
-								<td><a href="">delete</a></td>
+								<td colspan="8">No story yet !!!</td>
 							</tr>
-						<?php endforeach; ?>
-					<?php else: ?>
-						<tr>
-							<td colspan="8">No story yet !!!</td>
-						</tr>
-					<?php endif; ?>
-				</tbody>
-			</table>
+						<?php endif; ?>
+					</tbody>
+				</table>
+			</div>
+			<!-- // Display management table -->
+
 		</div>
-		<!-- // Display management table -->
 
 		<!-- Display footer -->
 		<?php include(ROOT_PATH.'/includes/footer.php'); ?>

@@ -1,10 +1,10 @@
 <nav class="author_nav">
 	<div class="logo">
-		<h1><a href="<?php echo BASE_URL.'/author'; ?>">Author Panel</a></h1>
+		<h1><a href="<?php echo BASE_URL; ?>">Mystoryz</a></h1>
 	</div>
 	<div class="nav-links">
-		<a href="<?php echo BASE_URL; ?>">Home</a>
-		<div style="float: right;">
+		<a class="home" href="<?php echo BASE_URL.'/author/'; ?>">Panel Home</a>
+		<div class="name">
 			<?php echo htmlentities(
 				$_SESSION['user']['first_name']
 				.' '

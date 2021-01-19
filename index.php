@@ -2,6 +2,7 @@
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php $story = getAllStory(); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>MyStoryz | Home</title>
 </head>
 <body>
