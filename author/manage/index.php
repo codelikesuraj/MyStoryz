@@ -22,7 +22,7 @@
 			<!-- Display management table -->
 			<div class="management-table" style="height: 50vw; overflow: scroll;">
 				<h3> Storyz Dashboard</h3>
-				<table border="1" style="width: 100%;">
+				<table border="1" style="text-align: center; width: 100%;">
 					<thead>
 						<th>S/N</th>
 						<th>TITLE</th>
@@ -42,8 +42,8 @@
 									<td><?php echo $data['published']; ?></td>
 									<td><?php echo $data['created']; ?></td>
 									<td><?php echo $data['updated']; ?></td>
-									<td><a href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
-									<td><a href="">delete</a></td>
+									<td style="background: #aaf; color: white;"><a style="text-decoration: underline;" href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
+									<td style="background: #faa; color: white;"><a style="text-decoration: underline;" href="">delete</a></td>
 								</tr>
 							<?php endforeach; ?>
 						<?php else: ?>
