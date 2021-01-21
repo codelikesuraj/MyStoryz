@@ -32,6 +32,9 @@ endif;
 		<?php include(ROOT_PATH.'/includes/public_nav.php'); ?>
 		<!-- // Display navigation -->
 
+		<!-- Display success message if any -->
+		<?php include(ROOT_PATH.'/includes/message.php'); ?>
+
 		<!-- Display banner -->
 		<p><?php include(ROOT_PATH.'/includes/banner.php'); ?></p>
 		<!-- // Display banner -->
