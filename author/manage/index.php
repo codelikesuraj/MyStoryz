@@ -14,14 +14,19 @@
 		<!-- // Display navigation -->
 
 		<div class="author-body">
-		
+
 			<!-- Display sidebar -->
 			<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
 			<!-- // Display sidebar -->
 
 			<!-- Display management table -->
 			<div class="management-table" style="height: 50vw; overflow: scroll;">
+				
 				<h3> Storyz Dashboard</h3>
+				
+				<!-- Display success messages if any -->
+				<p><?php include(ROOT_PATH.'/includes/message.php'); ?></p>
+
 				<table border="1" style="text-align: center; width: 100%;">
 					<thead>
 						<th>S/N</th>

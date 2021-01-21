@@ -318,6 +318,14 @@ hr{
 	text-align: center;
 	padding: 5px;
 }
+.message, .success{
+	color: #a94442;
+	background: #cdf2cd;
+	border: 1px solid #a94442;
+	margin-bottom: 20px;
+	text-align: center;
+	padding: 5px;
+}
 .available-comments{
 	display: flex;
 	flex-direction: column;

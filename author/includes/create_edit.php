@@ -6,6 +6,7 @@ $story_title = "";
 $story_content = "";
 $story_image = "";
 $errors = array();
+$success = '';
 
 
 $edit_id = "";
@@ -78,7 +79,6 @@ if(isset($_POST['create_story'])):
 			}
 			$sql2 = "INSERT INTO story (content, slug, title, image, published, author_id, created) VALUES (:content, :slug, :title, :image, :published, :author_id, current_timestamp)";
 			$result2 = $conn->prepare($sql2);
-			var_dump($story_status);
 			$result2->execute(array(
 				':content'=>$story_content,
 				':slug'=>$story_slug,
@@ -87,6 +87,14 @@ if(isset($_POST['create_story'])):
 				':published'=>$story_status,
 				':author_id'=>$_SESSION['user']['id']
 			));
+			$id = $conn->LastInsertId();
+			if($id):
+				$_SESSION['message'] = $success = 'Story has been created successfully';
+				header('Location: '.BASE_URL.'/author/manage/');
+				exit(0);
+			else:
+				array_push($errors, 'An unknown error has occured, please contact admin!');
+			endif;
 		else:
 			array_push($errors, 'Error saving header image');
 		endif;
@@ -173,6 +181,9 @@ if(isset($_POST['edit_story'])):
 				':published'=>$edit_status,
 				':id'=>$edit_id
 			));
+			$_SESSION['message'] = $success = 'Story has been updated successfully';
+			header('Location: '.BASE_URL.'/author/manage/');
+			exit(0);
 	endif;
 endif;
 /************************

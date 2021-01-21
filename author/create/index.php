@@ -24,6 +24,7 @@
 				<h3>Create Story</h3>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 					<p><?php include(ROOT_PATH.'/includes/error.php'); ?></p>
+					<p><?php include(ROOT_PATH.'/includes/success.php'); ?></p>
 					<label>
 						Title<br/>
 						<input type="text" name="story_title" placeholder="Add story title ..." value="<?php echo htmlentities($story_title); ?>" />
