@@ -449,6 +449,13 @@ hr{
 }
 
 /* Delete page */
+.delete-prompt{
+	width: 100%;
+	margin: auto;
+}
+.delete-prompt p, .delete-prompt ul, .delete-prompt li, .delete-prompt a, .delete-prompt h2{
+	font-size: 14px;
+}
 .delete-prompt p{
 	padding: 5px;
 	font-family: 'Arial', 'Helvetica', cursive;
@@ -466,21 +473,18 @@ hr{
 	margin: auto;
 }
 .delete-prompt .response .paste{
-	width: 70%;
+	width: 100%;
 	display: block;
 	margin: auto;
 	padding: 10px 10px;
-	font-size: 1em;
 }
 .delete-prompt .response .selection{
-	width: 70%;
+	width: 100%;
 	margin: auto;
 	text-align: right;
 	padding: 10px 10px;
 }
 .delete-prompt .response .selection input{
-	font-weight: bold;
-	font-size: 1em;
 	padding: 2px;
 	color: black;
 	border: 1px solid #a94442;
@@ -497,12 +501,8 @@ hr{
 .delete-prompt a:hover{
 	text-decoration: underline;
 }
-/*.error{
-	color: #a94442;
-	
-	border: 1px solid #a94442;
-	margin-bottom: 20px;
-	text-align: center;
-	padding: 5px;
-}*/
+.delete-prompt li{
+	list-style: asterisks;
+	margin: 4px;
+}
 </style>

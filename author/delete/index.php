@@ -10,14 +10,10 @@ endif;
 <?php include(ROOT_PATH.'/author/includes/delete.php'); ?>
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<title>MyStoryz | Edit</title>
+	<title>MyStoryz | Delete</title>
 </head>
 <body>
 	<div class="container">
-
-		<!-- Display navigation -->
-		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
-		<!-- // Display navigation -->
 
 		<!-- Display delete prompt -->
 		<div class="delete-prompt">
