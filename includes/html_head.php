@@ -485,6 +485,7 @@ hr{
 	padding: 10px 10px;
 }
 .delete-prompt .response .selection input{
+	font-size: 14px;
 	padding: 2px;
 	color: black;
 	border: 1px solid #a94442;
