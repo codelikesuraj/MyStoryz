@@ -147,7 +147,6 @@ if(isset($_POST['edit_story'])):
 	if(count($errors)<1):
 		// create slug
 		$edit_slug = createSlug($edit_title);
-		echo $edit_slug;
 		$sql2 = "SELECT * FROM story WHERE slug=:slug AND id<>:id";
 		$result2 = $conn->prepare($sql2);
 		$result2->execute(array(

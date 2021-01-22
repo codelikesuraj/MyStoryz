@@ -319,9 +319,9 @@ hr{
 	padding: 5px;
 }
 .message, .success{
-	color: #a94442;
+	color: #3a3;
 	background: #cdf2cd;
-	border: 1px solid #a94442;
+	border: 1px solid #3a3;
 	margin-bottom: 20px;
 	text-align: center;
 	padding: 5px;
