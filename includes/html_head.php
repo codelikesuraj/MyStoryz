@@ -452,13 +452,9 @@ hr{
 .delete-prompt{
 	width: 100%;
 	margin: auto;
-}
-.delete-prompt p, .delete-prompt ul, .delete-prompt li, .delete-prompt a, .delete-prompt h2{
 	font-size: 14px;
-}
-.delete-prompt p{
 	padding: 5px;
-	font-family: 'Arial', 'Helvetica', cursive;
+	font-family: Arial, 'Helvetica', cursive;
 }
 .delete-prompt h2{
 	color: #a94442;
@@ -468,33 +464,14 @@ hr{
 	text-align: center;
 	padding: 5px;
 }
-.delete-prompt .response{
-	width: 70%;
-	margin: auto;
-}
-.delete-prompt .response .paste{
-	width: 100%;
-	display: block;
-	margin: auto;
-	padding: 10px 10px;
-}
-.delete-prompt .response .selection{
-	width: 100%;
-	margin: auto;
-	text-align: right;
-	padding: 10px 10px;
-}
-.delete-prompt .response .selection input{
-	font-size: 14px;
-	padding: 2px;
-	color: black;
-	border: 1px solid #a94442;
-	border-radius: 15%;
-	background: #f2dede;
-}
-.delete-prompt .response .selection input:hover{
-	background: #444;
-	color: #f2dede;
+.delete-prompt .del-form input{
+	width: 50%;
+	color: #a94442;
+	background: #eee;
+	border: 1px solid black;
+	margin-bottom: 20px;
+	text-align: center;
+	padding: 10px;
 }
 .delete-prompt a{
 	font-weight: bold;
@@ -503,7 +480,7 @@ hr{
 	text-decoration: underline;
 }
 .delete-prompt li{
-	list-style: asterisks;
+	list-style-type: square;
 	margin: 4px;
 }
 </style>
