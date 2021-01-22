@@ -48,7 +48,7 @@
 									<td><?php echo $data['created']; ?></td>
 									<td><?php echo $data['updated']; ?></td>
 									<td style="background: #aaf; color: white;"><a style="text-decoration: underline;" href="<?php echo BASE_URL.'/author/edit?title='.$data['slug']; ?>">edit</a></td>
-									<td style="background: #faa; color: white;"><a style="text-decoration: underline;" href="">delete</a></td>
+									<td style="background: #faa; color: white;"><a style="text-decoration: underline;" href="<?php echo BASE_URL.'/author/delete?title='.$data['slug']; ?>">delete</a></td>
 								</tr>
 							<?php endforeach; ?>
 						<?php else: ?>

@@ -448,5 +448,61 @@ hr{
 	margin: 0px auto 0px 10px;
 }
 
-
+/* Delete page */
+.delete-prompt p{
+	padding: 5px;
+	font-family: 'Arial', 'Helvetica', cursive;
+}
+.delete-prompt h2{
+	color: #a94442;
+	background: #eee;
+	border: 1px solid black;
+	margin-bottom: 20px;
+	text-align: center;
+	padding: 5px;
+}
+.delete-prompt .response{
+	width: 70%;
+	margin: auto;
+}
+.delete-prompt .response .paste{
+	width: 70%;
+	display: block;
+	margin: auto;
+	padding: 10px 10px;
+	font-size: 1em;
+}
+.delete-prompt .response .selection{
+	width: 70%;
+	margin: auto;
+	text-align: right;
+	padding: 10px 10px;
+}
+.delete-prompt .response .selection input{
+	font-weight: bold;
+	font-size: 1em;
+	padding: 2px;
+	color: black;
+	border: 1px solid #a94442;
+	border-radius: 15%;
+	background: #f2dede;
+}
+.delete-prompt .response .selection input:hover{
+	background: #444;
+	color: #f2dede;
+}
+.delete-prompt a{
+	font-weight: bold;
+}
+.delete-prompt a:hover{
+	text-decoration: underline;
+}
+/*.error{
+	color: #a94442;
+	
+	border: 1px solid #a94442;
+	margin-bottom: 20px;
+	text-align: center;
+	padding: 5px;
+}*/
 </style>

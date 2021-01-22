@@ -14,6 +14,9 @@
 		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
+		<!-- Display any success message -->
+		<?php include(ROOT_PATH.'/includes/message.php'); ?>
+
 		<div class="author-body">
 			
 			<!-- Display sidebar -->
