@@ -16,7 +16,7 @@ endif;
 	<div class="container">
 
 		<!-- Display navigation -->
-		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
+		<?php include(ROOT_PATH.'/author/includes/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
 		<!-- Display story creation form -->

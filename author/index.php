@@ -11,7 +11,7 @@
 	<div class="container">
 
 		<!-- Display navigation -->
-		<?php include(ROOT_PATH.'/author/author_nav.php'); ?>
+		<?php include(ROOT_PATH.'/author/includes/author_nav.php'); ?>
 		<!-- // Display navigation -->
 
 		<!-- Display any success message -->
@@ -20,7 +20,7 @@
 		<div class="author-body">
 			
 			<!-- Display sidebar -->
-			<?php include(ROOT_PATH.'/author/author_sidebar.php'); ?>
+			<?php include(ROOT_PATH.'/author/includes/author_sidebar.php'); ?>
 			<!-- // Display sidebar -->
 
 			<div class="author-panel-info">
