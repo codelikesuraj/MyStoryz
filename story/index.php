@@ -24,10 +24,11 @@ endif;
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>MyStoryz | <?php echo htmlentities($story['title']); ?></title>
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="<?php echo htmlentities($story['title']); ?>" />
-	<meta property="og:image" content="<?php echo BASE_URL.'/static/images/'.htmlentities($story['image']); ?>" />
-	<meta property="og:url" content="<?php echo BASE_URL; ?>" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="<?php echo htmlentities($story['title']); ?>">
+	<meta property="og:description" content="Published by <?php echo htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']); ?>">
+	<meta property="og:image" content="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>">
+	<meta property="og:url" content="<?php echo BASE_URL.'/story/?title='.$story['slug']; ?>">
 </head>
 <body>
 	<div class="container">

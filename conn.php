@@ -16,12 +16,6 @@ catch(PDOException $error)
 	die("Could not connect to database ($dbname): ".$error->getMessage());
 }
 
-// Define constants for easy navigation
-/*foreach($_SERVER as $key => $data):
-	echo $key.' => '.$data;
-	echo '<br>';
-endforeach;
-*/
 define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/myfolder/mystoryz');
 define('ROOT_PATH', realpath(dirname(__FILE__)));
 ?>
