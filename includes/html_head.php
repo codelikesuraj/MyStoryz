@@ -356,8 +356,8 @@ hr{
 	font-size: 1.2em;
 }
 
-/* Public Nav */
-.author_nav{
+/* author and admin Nav */
+.author_nav, .admin_nav{
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
@@ -367,15 +367,15 @@ hr{
 	border-radius: 6px 6px 6px 6px;
 	padding: 30px 10px 30px 10px;
 }
-.author_nav a, .name
+.author_nav a, .name, .admin_nav a, .name
 {
 	color: #eec;
 }
-.author_nav .logo{
+.author_nav .logo, .admin_nav .logo{
 	margin: 10px 0px 10px 0px;
 	flex: 3;
 }
-.author_nav .nav-links{
+.author_nav .nav-links, .author_nav .nav-links{
 	margin: 10px 0px 10px 0px;
 	display: flex;
 	flex: 1;
@@ -384,9 +384,17 @@ hr{
 	flex: 1;
 	align-self: flex-start;
 }
+.admin_nav .nav-links .home{
+	flex: 1;
+	align-items: flex-start;
+}
 .author_nav .nav-links .name{
 	flex: 1;
 	align-self: flex-end;
+}
+.admin_nav .nav-links .name{
+	flex: 1;
+	float: right;
 }
 
 /* Author body */
@@ -398,22 +406,22 @@ hr{
 }
 
 /* Author sidebar */
-.author-sidebar{
+.author-sidebar, .admin-sidebar{
 	font-size: 14px;
 	width: 15%;
 	margin: 0px auto 0px auto;
 }
-.author-sidebar .nav-links a{
+.author-sidebar .nav-links a, .admin-sidebar .nav-links a{
 	text-align: center;
 	display: block;
 	border-bottom: 2px solid gray;
 	margin-top: 10px;
 	padding-bottom: 10px;
 }
-.author-sidebar .nav-links a:hover{
+.author-sidebar .nav-links a:hover, .admin-sidebar .nav-links a:hover{
 	padding-left: 10px;
 }
-.author-sidebar h3, .author-panel-info h3, .create-form h3, .management-table h3{
+.author-sidebar h3, .author-panel-info h3, .create-form h3, .management-table h3, .admin-sidebar h3{
 	text-align: center;
 	background-color: #444;
 	width: auto;
