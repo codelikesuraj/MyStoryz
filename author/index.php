@@ -1,4 +1,5 @@
 <?php
+// database connection
 include('../../mystoryz/conn.php');
 include(ROOT_PATH.'/includes/public_function.php');
 include(ROOT_PATH.'/author/includes/author_functions.php');
@@ -8,8 +9,6 @@ checkAuthor();
 $storyz_count = getPublishedCount($_SESSION['user']['id']);
 // get total comments on all posts by author
 $comment_count = getTotalCommentCount($_SESSION['user']['id']);
-// process password change 
-changePassword();
 ?>
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
@@ -48,12 +47,6 @@ changePassword();
 					<!-- Form to change password -->
 					<form id="pwd" method="post" action="<?php echo $_SERVER['PHP_SELF'].'#pwd'; ?>">
 						<h3>Change password</h3>
-
-						<!-- Display password change errors -->
-						<?php include(ROOT_PATH.'/includes/pwderrors.php'); ?>
-						<!-- // Display password change errors -->
-
-						<br/>
 						<label>
 							Old password: <input type="password" name="old_password" />
 						</label><br/><br/>

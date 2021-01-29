@@ -146,26 +146,3 @@ function createSlug(string $title)
 	$slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
 	return $slug;
 }
-
-// process password change
-function changePassword(){
-	// variable declarations
-	global $conn;	// connection to database
-	$old_pwd = "";	// old password
-	$new_pwd1 = "";	// new password
-	$new_pwd2 = "";	// retyped password
-	$pwd_errors = array();	// array to store errors
-
-	if(isset($_POST['pwd_change'])):
-		// get and trim input for whitespaces
-		$old_pwd = trim($_POST['old_password']);
-		$new_pwd1 = trim($_POST['new_password1']);
-		$new_pwd2 = trim($_POST['new_password2']);
-
-		// check input for errors
-		if(empty($old_pwd)){array_push($pwd_errors, 'Please enter the password currently used for logging into this account');}
-		if(empty($new_pwd1)){array_push($pwd_errors, 'A new password is required');}
-		if(empty($new_pwd2)){array_push($pwd_errors, 'Please retype password');}
-	endif;
-
-}
