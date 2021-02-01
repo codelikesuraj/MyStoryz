@@ -68,6 +68,21 @@ endif;
 		<hr>
 		<!-- // Story content -->
 
+		<!--
+		// This is a Javascript function to print page the post.
+		// As at the time of adding this comment here, I could 
+		// not figure out a way to print only the post (which includes 
+		// post's image, post's author info, post's title, post's 
+		// content and post's published date) excluding the 
+		// comments and other irrelevant information.
+		// Here is the simple function to print the whole page
+
+		<button onclick="print();">Print</button>
+
+		// Now I just how to figure out how to print only the
+		// above stated information :(
+		-->
+
 		<!-- Comment section -->
 		<div class="comment" id="comment-submit">
 			<h3>Comments(<?php echo $comment=='error'?'0':count($comment);?>)</h3>
