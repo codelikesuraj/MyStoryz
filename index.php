@@ -4,12 +4,17 @@
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="description" content="MyStoryz by Abdulbaki Suraj"/>
+	<meta property="og:title" content="MyStoryz"/>
+	<meta property="og:url" content="<?php echo BASE_URL;?>">
+	<!--<meta property="og:image" content="<?php echo BASE_URL;?>/static/images/urlimage.jpg" >-->
+	<meta property="og:description" content="MyStoryz by Abdulbaki Suraj"/>
 	<meta property="og:site_name" content="MyStoryz"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="MyStoryz"/>
-	<meta property="og:description" content="MyStoryz by Abdulbaki Suraj"/>
-	<!--<meta property="og:image" content="https://abdulbakisuraj.xyz/mystoryz/images/" />-->
-	<meta property="og:url" content="https://www.abdulbakisuraj.xyz/mystoryz/"/>
+
+	<meta name="twitter:title" content="MyStoryz">
+	<meta name="twitter:description" content="MyStoryz by Abdulbaki Suraj">
+	<meta name="twitter:url" content="<?php echo BASE_URL;?>">
+
 	<title>MyStoryz</title>
 </head>
 <body>
@@ -48,9 +53,9 @@
 						<div class="author-name">
 							<?php echo 
 							'<strong>'
-							.htmlentities($key['story_author']['first_name'])
+							.ucfirst(htmlentities($key['story_author']['first_name']))
 							.' '
-							.htmlentities($key['story_author']['last_name'])
+							.ucfirst(htmlentities($key['story_author']['last_name']))
 							.'</strong>'
 							.' @'
 							.htmlentities($key['story_author']['username']);

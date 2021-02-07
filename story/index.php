@@ -23,12 +23,17 @@ endif;
 
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>MyStoryz | <?php echo htmlentities($story['title']); ?></title>
+	<title><?php echo htmlentities($story['title']); ?></title>
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="<?php echo htmlentities($story['title']); ?>">
-	<meta property="og:description" content="Published by <?php echo htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']); ?>">
-	<meta property="og:image" content="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>">
-	<meta property="og:url" content="<?php echo BASE_URL.'/story/?title='.$story['slug']; ?>">
+	<meta property="og:url" content="<?php echo BASE_URL."/story/?title=".$story['slug'];?>">
+	<!--<meta property="og:image" content="<?php echo BASE_URL.'/static/images/'.$story['image']; ?>">-->
+	<meta property="og:description" content="Published on MyStoryz by <?php echo ucfirst(htmlentities($story['author_info']['first_name'])).' '.ucfirst(htmlentities($story['author_info']['last_name'])); ?>">
+	<meta property="og:site_name" content="MyStoryz"/>
+
+	<meta name="twitter:title" content="<?php echo htmlentities($story['title']); ?>">
+	<meta name="twitter:description" content="Published by <?php echo ucfirst(htmlentities($story['author_info']['first_name'])).' '.ucfirst(htmlentities($story['author_info']['last_name'])); ?>">
+	<meta name="twitter:url" content="<?php echo BASE_URL."/story/?title=".$story['slug'];?>">
 </head>
 <body>
 	<div class="container">
@@ -52,7 +57,7 @@ endif;
 				<br/>
 				<!-- display story publish date -->
 
-				<p><?php echo htmlentities(date('M j, Y', strtotime($story['created']))); ?><strong> || </strong><?php echo '<strong>'.htmlentities($story['author_info']['first_name']).' '.htmlentities($story['author_info']['last_name']).'</strong>'.' @'.htmlentities($story['author_info']['username']); ?></p>
+				<p><?php echo htmlentities(date('M j, Y', strtotime($story['created']))); ?><strong> || </strong><?php echo '<strong>'.ucfirst(htmlentities($story['author_info']['first_name'])).' '.ucfirst(htmlentities($story['author_info']['last_name'])).'</strong>'.' @'.htmlentities($story['author_info']['username']); ?></p>
 			</div>
 			<br/>
 			<div class="story-image">
