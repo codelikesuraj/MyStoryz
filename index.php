@@ -2,8 +2,15 @@
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php $story = getAllStory(); ?>
 <?php include(ROOT_PATH.'/includes/html_head.php'); ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>MyStoryz | Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="MyStoryz by Abdulbaki Suraj"/>
+	<meta property="og:site_name" content="MyStoryz"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="MyStoryz"/>
+	<meta property="og:description" content="MyStoryz by Abdulbaki Suraj"/>
+	<!--<meta property="og:image" content="https://abdulbakisuraj.xyz/mystoryz/images/" />-->
+	<meta property="og:url" content="https://www.abdulbakisuraj.xyz/mystoryz/"/>
+	<title>MyStoryz</title>
 </head>
 <body>
 	<div class="container">
