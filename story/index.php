@@ -88,6 +88,15 @@ endif;
 		// above stated information :(
 		-->
 
+		<!-- Share widgets and/or links -->
+		<p style="text-align: center;">
+			Share on 
+			<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about <?php echo htmlentities($story['title']);?> published on MyStoryz by <?php echo ucfirst(htmlentities($story['author_info']['first_name'])).' '.ucfirst(htmlentities($story['author_info']['last_name']));?>&url=<?php echo current_url();?>"><strong>Twitter</strong></a> or 
+			<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=<?php echo current_url();?>"><strong>Whatsapp</strong></a>
+		</p>
+		<hr/>
+		<!-- Share widgests and/or links -->
+
 		<!-- Comment section -->
 		<div class="comment" id="comment-submit">
 			<h3>Comments(<?php echo $comment=='error'?'0':count($comment);?>)</h3>
