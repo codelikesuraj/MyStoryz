@@ -6,7 +6,6 @@
 	<meta name="description" content="MyStoryz by Abdulbaki Suraj"/>
 	<meta property="og:title" content="MyStoryz"/>
 	<meta property="og:url" content="<?php echo BASE_URL;?>">
-	<!--<meta property="og:image" content="<?php echo BASE_URL;?>/static/images/urlimage.jpg" >-->
 	<meta property="og:description" content="MyStoryz by Abdulbaki Suraj"/>
 	<meta property="og:site_name" content="MyStoryz"/>
 	<meta property="og:type" content="website"/>
@@ -82,8 +81,8 @@
 					<hr/>
 					<p style="text-align: center;">
 						Share on 
-						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name']));?>&url=<?php echo current_url();?>"><strong>Twitter</strong></a> or 
-						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).' '.current_url();?>"><strong>Whatsapp</strong></a>
+						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name']));?>&url=<?php echo BASE_URL."/story/?title=".$key['slug'];?>"><strong>Twitter</strong></a> or 
+						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).' '.BASE_URL."/story/?title=".$key['slug'];?>"><strong>Whatsapp</strong></a>
 					</p>
 					<br/>
 					<!-- Share widgests and/or links -->
