@@ -82,8 +82,8 @@
 					<hr/>
 					<p style="text-align: center;">
 						Share on 
-						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about <?php echo htmlentities($story['title']);?> published on MyStoryz by <?php echo ucfirst(htmlentities($story['author_info']['first_name'])).' '.ucfirst(htmlentities($story['author_info']['last_name']));?>&url=<?php echo current_url();?>"><strong>Twitter</strong></a> or 
-						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about <?php echo htmlentities($key['title']);?> published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).current_url();?>"><strong>Whatsapp</strong></a>
+						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name']));?>&url=<?php echo current_url();?>"><strong>Twitter</strong></a> or 
+						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).' '.current_url();?>"><strong>Whatsapp</strong></a>
 					</p>
 					<br/>
 					<!-- Share widgests and/or links -->
