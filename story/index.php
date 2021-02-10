@@ -1,9 +1,8 @@
 <?php include('../../mystoryz/conn.php'); ?>
 <?php include(ROOT_PATH.'/includes/public_function.php'); ?>
 <?php include(ROOT_PATH.'/includes/add_comment.php'); ?>
-
-<!-- Fetch story from title in GET parameter-->
 <?php
+// fetch story from title in GET parameter
 if(isset($_GET) && !empty($_GET['title'])):
 	$story = getSingleStory($_GET['title']);
 	if($story === 'error'):
