@@ -75,7 +75,9 @@ if(isset($_POST['signup']))
 			if(!$user_id):
 				array_push($errors, 'Error creating account, please contact administrator');
 			else:
-				$_SESSION['message'] = 'Account created successfully';
+				$_SESSION['message'] = 'Account created successfully<br/>Log in below to continue';
+				header('Location: '.BASE_URL.'/login.php/?ref='.$source);
+				exit(0);
 			endif;
 		endif;
 	endif;

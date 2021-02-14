@@ -14,6 +14,11 @@
 		<!-- Login form -->
 		<form method="post" class="myform" autocomplete="off">
 			<h2>Login</h2>
+			
+			<!-- Display success messages -->
+			<?php include(ROOT_PATH.'/includes/message.php'); ?>
+			<!-- \\ Display success messages -->
+
 			<?php include(ROOT_PATH.'/includes/error.php'); ?>
 			<label>
 				<input type="text" name="username" placeholder="username or email" value="<?php echo htmlentities($username); ?>" required />
