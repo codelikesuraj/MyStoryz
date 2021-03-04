@@ -2,18 +2,10 @@
 session_start();
 //connect to database
 
-/* localhost config
 $host = '127.0.0.1';
 $dbname = 'mystoryz';
 $username = 'fliplikesuraj';
 $password = 'Abdulbaki0818';
-*/
-
-$url= parse_url(getenv("CLEAR_DATABASE_URL"));
-$host = $url["host"];
-$username = $url["pass"];
-$password = $url["pass"];
-$dbbname = substr($url["path"], 1)
 
 try
 {
