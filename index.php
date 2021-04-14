@@ -34,6 +34,7 @@
 		<h2>Recent Storyz ...</h2>
 		<hr>
 		<div class="story-list">
+			<?php if(!empty($story)):?>
 			<?php foreach($story as $key):?>
 				<div class="story-card">
 
@@ -81,13 +82,17 @@
 					<hr/>
 					<p style="text-align: center;">
 						Share on 
-						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name']));?>&url=<?php echo BASE_URL."/story/?title=".$key['slug'];?>"><strong>Twitter</strong></a> or 
-						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).' '.BASE_URL."/story/?title=".$key['slug'];?>"><strong>Whatsapp</strong></a>
+						<a style="text-decoration: underline; color: rgb(29, 161, 242);" href="https://twitter.com/intent/tweet?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name']));?>&url=<?php echo BASE_URL."/story/?title=".$key['slug'];?>" target="_blank"><strong>Twitter</strong></a> or 
+						<a style="text-decoration: underline; color: rgb(29, 222, 161);" href="whatsapp://send?text=Read about [<?php echo htmlentities($key['title']);?>] published on MyStoryz by <?php echo ucfirst(htmlentities($key['story_author']['first_name'])).' '.ucfirst(htmlentities($key['story_author']['last_name'])).' '.BASE_URL."/story/?title=".$key['slug'];?>" target="_blank"><strong>Whatsapp</strong></a>
 					</p>
 					<br/>
 					<!-- Share widgests and/or links -->
 				</div>
 			<?php endforeach; ?>
+			<?php else:
+			echo '<br/><p>No story have been published yet<br/><br/><br/></p>';
+			endif;?>
+
 		</div>
 		<!-- // Display list of recent storyz -->
 		

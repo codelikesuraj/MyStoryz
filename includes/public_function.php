@@ -1,21 +1,24 @@
 <?php
-
 // fetch all published stories
 function getAllStory()
 {
-	global $conn;	// include database connection
+	// include database connection
+	global $conn;
+	$final_result = array();
+
 	$sql = "SELECT * FROM story WHERE published=1 ORDER BY created DESC";
 	$query = $conn->query($sql);
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-	$final_result = array();
-	foreach($result as $key):
-		// fetch the author information that created each story
-		$key['story_author'] = getAuthor($key['author_id']);
+	if(is_array($result)):
+		foreach($result as $key):
+			// fetch the author information that created each story
+			$key['story_author'] = getAuthor($key['author_id']);
 
-		// add author information details as an array to $final_result
-		array_push($final_result, $key);
-	endforeach;
+			// add author information details as an array to $final_result
+			array_push($final_result, $key);
+		endforeach;
+	endif;
 	
 	return $final_result;
 }
@@ -23,7 +26,9 @@ function getAllStory()
 // fetch a single published story by the slug
 function getSingleStory(string $slug)
 {
-	global $conn;	// include database connection
+	// include database connection
+	global $conn;
+
 	$sql = "SELECT * FROM story WHERE published = 1 AND slug = :slug";
 	$result = $conn->prepare($sql);
 	$result->execute(array(':slug'=>$slug));
