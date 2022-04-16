@@ -1,4 +1,4 @@
 # MyStoryz
-<p>A blog-like site where users can become authors and publish their contents</p>
+<p>A platform for reading and uploading comprehension passages from Secondary School English Language textbooks</p>
 
-<p>Click <a href="http://abdulbakisurajtest.atwebpages.com/mystoryz">here</a> for a live demo</p> 
+<p>Click <a href="http://codelikesuraj.site/mystoryz">here</a> for the live site</p> 
